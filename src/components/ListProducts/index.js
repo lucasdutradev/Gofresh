@@ -6,7 +6,6 @@ const ListProducts = () => {
     <div>
       {listaTeste.map((list, index) => (
         <div key={index}>
-          teste
           <CardList data={list} />
         </div>
       ))}
