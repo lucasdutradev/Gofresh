@@ -1,11 +1,12 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { CartEnd } from "./pages/CartEnd";
+import { UserConfig } from "./pages/UserConfig";
 
 function App() {
   return (
     <div className="App">
-      <CartEnd day={3} people={2} />
+      <UserConfig />
     </div>
   );
 }
