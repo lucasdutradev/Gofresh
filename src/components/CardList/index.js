@@ -1,17 +1,29 @@
 import RatingIcon from "../RatingIcon";
+import {
+  ContainerCardList,
+  ImageCard,
+  RatingStar,
+  ContainerInformation,
+  TitleName,
+  DescriptionCard,
+} from "./styles";
 
 const CardList = ({ data }) => {
   const rating = data.id;
 
   return (
-    <div className="containeirCardList">
-      <img src={data.image} alt={data.name} />
-      {[1, 2, 3, 4, 5].map((index) => {
-        return <RatingIcon index={index} rating={rating} />;
-      })}
-      <h3 className="titleName">{data.name}</h3>
-      <p className="descriptionCard">{data.specifications}</p>
-    </div>
+    <ContainerCardList>
+      <ImageCard src={data.image} alt={data.name} />
+      <ContainerInformation>
+        <RatingStar>
+          {[1, 2, 3, 4, 5].map((index) => {
+            return <RatingIcon key={index} index={index} rating={rating} />;
+          })}
+        </RatingStar>
+        <TitleName>{data.name}</TitleName>
+        <DescriptionCard>{data.specifications}</DescriptionCard>
+      </ContainerInformation>
+    </ContainerCardList>
   );
 };
 
