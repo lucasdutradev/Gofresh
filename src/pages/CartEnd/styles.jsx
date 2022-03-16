@@ -9,7 +9,7 @@ export const CartEndStyles = styled.div`
   }
 
   header {
-    height: 85px;
+    height: 115px;
     text-align: left;
     padding-top: 20px;
     padding-left: 20px;
@@ -20,6 +20,8 @@ export const CartEndStyles = styled.div`
     height: 35px;
     width: 94px;
     border-style: none;
+    background-color: #cfdf6e;
+    color: white;
   }
 
   h1 {
@@ -37,10 +39,13 @@ export const CartEndStyles = styled.div`
     border-style: none;
   }
 
-  h2 {
+  .lunchPrices {
+    margin-top: 50px;
+  }
+
+  .lunchPrices p {
     text-align: left;
     padding-left: 30px;
-
     font-size: 17px;
     color: grey;
   }
@@ -59,5 +64,7 @@ export const CartEndStyles = styled.div`
     font-size: 32px;
     font-weight: bold;
     border-style: none;
+    background-color: #f44335;
+    color: white;
   }
 `;

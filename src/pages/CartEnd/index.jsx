@@ -50,8 +50,10 @@ export const CartEnd = ({ day, people }) => {
               ))}
             </select>
           </p>
-          <h2>Preço de cada refeição:</h2>
-          <h2>R$ 15,00</h2>
+          <div className="lunchPrices">
+            <p>Preço de cada refeição:</p>
+            <p>R$ 15,00</p>
+          </div>
 
           <h3>Total: R$ {15 * people * 2 * day},00</h3>
           <button>PAGAR</button>
