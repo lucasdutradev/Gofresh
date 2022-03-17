@@ -1,11 +1,7 @@
 import { Input } from "./style";
 
-const InputsDefault = ({ ...res }) => {
-  return (
-    <>
-      <Input {...res} />
-    </>
-  );
+const InputsDefault = ({ register, nameInput, ...res }) => {
+  return <Input {...register(nameInput)} {...res} />;
 };
 
 export default InputsDefault;
