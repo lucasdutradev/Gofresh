@@ -12,5 +12,5 @@ export const Input = styled.input`
   border-radius: 5px;
   padding: 0 15px;
   box-sizing: border-box;
-  border: 1px solid #000000;
+  border: 1px solid ${(props) => (props.isError ? "red" : "#000000")};
 `;
