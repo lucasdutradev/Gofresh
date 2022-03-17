@@ -16,12 +16,12 @@ import {
 } from "./style";
 import ButtonDefault from "../../components/Button";
 import { useContext } from "react";
-import { RegisterContext } from "../../Providers/postRegister";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import { LoginContext } from "../../Providers/postLogin";
 
 const LoginPage = () => {
-  const { handleSubmitPost } = useContext(RegisterContext);
+  const { handleSubmitPostLogin } = useContext(LoginContext);
   const formValidation = yup.object().shape({
     email: yup
       .string()
@@ -40,11 +40,7 @@ const LoginPage = () => {
   console.log(errors);
 
   const onSubmitFunction = (data) => {
-    data = {
-      ...data,
-      codigoConvite: Math.floor(Date.now() * Math.random()).toString(36),
-    };
-    handleSubmitPost(data);
+    handleSubmitPostLogin(data);
   };
 
   return (
