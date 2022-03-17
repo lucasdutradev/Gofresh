@@ -6,8 +6,8 @@ export const Input = styled.input`
     min-height: 50px;
   }
   margin-bottom: 35px;
-  width: 250px;
-  /* max-width: 280px; */
+  width: 100%;
+  max-width: 280px;
   min-height: 33px;
   border-radius: 5px;
   padding: 0 15px;
