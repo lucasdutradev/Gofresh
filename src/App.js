@@ -1,7 +1,7 @@
-import LoginPage from "./pages/Login";
+import ListProducts from "./components/ListProducts";
 
 function App() {
-  return <LoginPage />;
+  return <ListProducts />;
 }
 
 export default App;
