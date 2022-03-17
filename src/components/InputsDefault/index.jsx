@@ -1,7 +1,7 @@
 import { Input } from "./style";
 
-const InputsDefault = ({ register, nameInput, ...res }) => {
-  return <Input {...register(nameInput)} {...res} />;
+const InputsDefault = ({ isError, register, nameInput, ...res }) => {
+  return <Input isError={isError} {...register(nameInput)} {...res} />;
 };
 
 export default InputsDefault;
