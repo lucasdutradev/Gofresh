@@ -37,7 +37,6 @@ const RegisterPage = () => {
   } = useForm({
     resolver: yupResolver(formValidation),
   });
-  console.log(errors);
 
   const onSubmitFunction = (data) => {
     data = {
@@ -50,35 +49,43 @@ const RegisterPage = () => {
   return (
     <ContainerBox>
       <RigthBox>
-        <div>
+        <div className="box-logo">
           <img src={Logo} alt="logo" />
         </div>
         <h3>Registro</h3>
         <h1>Go fresh in your home</h1>
         <FormBox onSubmit={handleSubmit(onSubmitFunction)}>
+          <span className="error">{errors.name?.message}</span>
           <InputsDefault
+            isError={errors.name?.message}
             type={"text"}
             nameInput="name"
             register={register}
-            placeholder={"Digite seu nome:"}
+            placeholder={"*Digite seu nome:"}
           />
+          <span className="error">{errors.email?.message}</span>
           <InputsDefault
+            isError={errors.email?.message}
             nameInput="email"
             register={register}
             type={"text"}
-            placeholder={"Digite seu melhore e-mail:"}
+            placeholder={"*Digite seu melhore e-mail:"}
           />
+          <span className="error">{errors.password?.message}</span>
           <InputsDefault
+            isError={errors.password?.message}
             nameInput="password"
             register={register}
             type={"text"}
-            placeholder={"Digite uma senha forte:"}
+            placeholder={"*Digite uma senha forte:"}
           />
+          <span className="error">{errors.confirmPassword?.message}</span>
           <InputsDefault
+            isError={errors.confirmPassword?.message}
             nameInput="confirmPassword"
             register={register}
             type={"text"}
-            placeholder={"Confirme sua senha:"}
+            placeholder={"*Confirme sua senha:"}
           />
           <InputsDefault
             nameInput="cep"

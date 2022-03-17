@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import { toast } from "react-toastify";
 import { Api } from "../../services/api";
 
 export const RegisterContext = createContext({});
@@ -6,8 +7,13 @@ export const RegisterContext = createContext({});
 export const RegisterProvider = ({ children }) => {
   const handleSubmitPost = (data) => {
     Api.post("/register", data)
-      .then((resp) => console.log(resp.data))
-      .catch((err) => console.log(err));
+      .then((_) => {
+        toast.success("Registrado com sucesso!");
+      })
+      .catch((err) => {
+        console.log(err.response);
+        toast.error("E-mail ja existente");
+      });
   };
 
   return (
