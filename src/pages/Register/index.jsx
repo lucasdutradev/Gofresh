@@ -5,8 +5,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import InputsDefault from "../../components/InputsDefault";
 import { ContainerBox, FormBox } from "./style";
 import ButtonDefault from "../../components/Button";
+import { useContext } from "react";
+import { RegisterContext } from "../../Providers/postRegister";
 
 const RegisterPage = () => {
+  const { handleSubmitPost } = useContext(RegisterContext);
   const formValidation = yup.object().shape({
     name: yup.string().required("Nome obrigatorio"),
     email: yup
@@ -41,7 +44,7 @@ const RegisterPage = () => {
       ...data,
       codigoConvite: Math.floor(Date.now() * Math.random()).toString(36),
     };
-    console.log(data);
+    handleSubmitPost(data);
   };
 
   return (
