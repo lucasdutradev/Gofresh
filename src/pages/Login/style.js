@@ -1,11 +1,42 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import svgLogin from "../../images/login.svg";
+
+const fadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const FormBox = styled.form`
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  animation: ${fadeIn} 2s;
+
+  .error {
+    font-size: 13px;
+    color: red;
+  }
 `;
 
 export const ContainerBox = styled.div`
@@ -18,6 +49,7 @@ export const ContainerBox = styled.div`
 `;
 
 export const SocialBox = styled.div`
+  animation: ${fadeIn} 2s;
   margin-top: 20px;
   width: 80%;
   display: flex;
@@ -82,6 +114,7 @@ export const RigthBox = styled.div`
   align-items: flex-end;
   justify-content: center;
   h3 {
+    animation: ${fadeIn} 2s;
     width: 78%;
     font-size: 13px;
     text-align: right;
@@ -90,6 +123,7 @@ export const RigthBox = styled.div`
     }
   }
   h1 {
+    animation: ${fadeIn} 2s;
     width: 78%;
     font-size: 18px;
     margin-bottom: 32px;
@@ -110,6 +144,7 @@ export const RigthBox = styled.div`
     }
   }
   .box-logo {
+    animation: ${fadeIn} 2s;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -127,6 +162,7 @@ export const RigthBox = styled.div`
 `;
 
 export const LeftBox = styled.div`
+  animation: ${fadeInLeft} 2s;
   @media screen and (min-width: 700px) {
     width: 50%;
     height: 100%;

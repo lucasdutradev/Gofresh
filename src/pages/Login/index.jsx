@@ -52,18 +52,23 @@ const LoginPage = () => {
         <h3>Login</h3>
         <h1>Go fresh in your home</h1>
         <FormBox onSubmit={handleSubmit(onSubmitFunction)}>
+          <span className="error">{errors.email?.message}</span>
           <InputsDefault
+            isError={errors.email?.message}
             nameInput="email"
             register={register}
             type={"text"}
             placeholder={"Digite seu e-mail:"}
           />
+          <span className="error">{errors.password?.message}</span>
           <InputsDefault
+            isError={errors.password?.message}
             nameInput="password"
             register={register}
             type={"text"}
             placeholder={"Digite sua senha:"}
           />
+
           <span className="register-box">
             Não possui conta? <p>Cadastre-se</p>
           </span>
