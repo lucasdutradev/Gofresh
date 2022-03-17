@@ -3,7 +3,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputsDefault from "../../components/InputsDefault";
-import { ContainerBox, FormBox } from "./style";
+import { ContainerBox, FormBox, LeftBox, RigthBox } from "./style";
 import ButtonDefault from "../../components/Button";
 import { useContext } from "react";
 import { RegisterContext } from "../../Providers/postRegister";
@@ -49,44 +49,47 @@ const RegisterPage = () => {
 
   return (
     <ContainerBox>
-      <h3>Registro</h3>
-      <h1>Go fresh in your home</h1>
-      <FormBox onSubmit={handleSubmit(onSubmitFunction)}>
-        <InputsDefault
-          type={"text"}
-          nameInput="name"
-          register={register}
-          placeholder={"Digite seu nome:"}
-        />
-        <InputsDefault
-          nameInput="email"
-          register={register}
-          type={"text"}
-          placeholder={"Digite seu melhore e-mail:"}
-        />
-        <InputsDefault
-          nameInput="password"
-          register={register}
-          type={"text"}
-          placeholder={"Digite uma senha forte:"}
-        />
-        <InputsDefault
-          nameInput="confirmPassword"
-          register={register}
-          type={"text"}
-          placeholder={"Confirme sua senha:"}
-        />
-        <InputsDefault
-          nameInput="cep"
-          register={register}
-          type={"text"}
-          placeholder={"Digite seu cep (ex: 00000-000)"}
-        />
-        <span>
-          Ja possui conta? <p>Login</p>
-        </span>
-        <ButtonDefault type="Submit">Registrar</ButtonDefault>
-      </FormBox>
+      <RigthBox>
+        <h3>Registro</h3>
+        <h1>Go fresh in your home</h1>
+        <FormBox onSubmit={handleSubmit(onSubmitFunction)}>
+          <InputsDefault
+            type={"text"}
+            nameInput="name"
+            register={register}
+            placeholder={"Digite seu nome:"}
+          />
+          <InputsDefault
+            nameInput="email"
+            register={register}
+            type={"text"}
+            placeholder={"Digite seu melhore e-mail:"}
+          />
+          <InputsDefault
+            nameInput="password"
+            register={register}
+            type={"text"}
+            placeholder={"Digite uma senha forte:"}
+          />
+          <InputsDefault
+            nameInput="confirmPassword"
+            register={register}
+            type={"text"}
+            placeholder={"Confirme sua senha:"}
+          />
+          <InputsDefault
+            nameInput="cep"
+            register={register}
+            type={"text"}
+            placeholder={"Digite seu cep (ex: 00000-000)"}
+          />
+          <span>
+            Ja possui conta? <p>Login</p>
+          </span>
+          <ButtonDefault type="Submit">Registrar</ButtonDefault>
+        </FormBox>
+      </RigthBox>
+      <LeftBox></LeftBox>
     </ContainerBox>
   );
 };
