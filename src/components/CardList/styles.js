@@ -4,8 +4,12 @@ export const ContainerCardList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 400px;
+  width: 279px;
   height: 137px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 60px;
+  margin-top: 60px;
 `;
 
 export const ImageCard = styled.img`

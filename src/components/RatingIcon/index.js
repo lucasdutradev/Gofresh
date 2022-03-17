@@ -1,9 +1,8 @@
 import StarIcon from "../StarIcon";
 import { useMemo } from "react";
+import { StarIndividual } from "./style";
 
-const RatingIcon = (props) => {
-  const { index, rating, hoverRating } = props;
-
+const RatingIcon = ({ index, rating, hoverRating }) => {
   const fill = useMemo(() => {
     if (hoverRating >= index) {
       return "yellow";
@@ -14,9 +13,9 @@ const RatingIcon = (props) => {
   }, [rating, hoverRating, index]);
 
   return (
-    <div className="cursor-pointer">
-      <StarIcon key={index} fill={fill} />
-    </div>
+    <StarIndividual>
+      <StarIcon fill={fill} />
+    </StarIndividual>
   );
 };
 
