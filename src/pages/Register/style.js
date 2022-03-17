@@ -1,11 +1,41 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import svgRegister from "../../images/security.svg";
+
+const fadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const FormBox = styled.form`
   width: 80%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  animation: ${fadeInLeft} 2s;
+  .error {
+    font-size: 13px;
+    color: red;
+  }
 `;
 
 export const ContainerBox = styled.div`
@@ -38,12 +68,15 @@ export const RigthBox = styled.div`
   h3 {
     width: 78%;
     font-size: 16px;
+    margin-top: 30px;
+    animation: ${fadeInLeft} 2s;
   }
   h1 {
     width: 78%;
     font-size: 20px;
     margin-bottom: 32px;
     font-weight: 500;
+    animation: ${fadeInLeft} 2s;
   }
   span {
     font-size: 13px;
@@ -53,6 +86,18 @@ export const RigthBox = styled.div`
 
     p {
       color: #f44335;
+    }
+  }
+  .box-logo {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    animation: ${fadeInLeft} 2s;
+  }
+  img {
+    width: 100px;
+    @media screen and (min-width: 700px) {
+      width: 158px;
     }
   }
 `;
@@ -66,5 +111,6 @@ export const LeftBox = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
+    animation: ${fadeIn} 2s;
   }
 `;

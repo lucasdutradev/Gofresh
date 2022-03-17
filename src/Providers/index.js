@@ -1,11 +1,14 @@
 import { RegisterProvider } from "./postRegister";
 import { LoginProvider } from "./postLogin";
+import { ListProvider } from "./list";
 
 const Provider = ({ children }) => {
   return (
-    <RegisterProvider>
-      <LoginProvider>{children}</LoginProvider>
-    </RegisterProvider>
+    <ListProvider>
+      <RegisterProvider>
+        <LoginProvider>{children}</LoginProvider>
+      </RegisterProvider>
+    </ListProvider>
   );
 };
 
