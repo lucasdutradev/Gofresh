@@ -55,6 +55,21 @@ export const RigthBox = styled.div`
       color: #f44335;
     }
   }
+  div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    @media screen and (min-width: 700px) {
+      margin-bottom: 40px;
+    }
+  }
+  img {
+    width: 100px;
+    @media screen and (min-width: 700px) {
+      width: 158px;
+    }
+  }
 `;
 
 export const LeftBox = styled.div`
@@ -65,5 +80,6 @@ export const LeftBox = styled.div`
     background-image: url(${svgRegister});
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 80%;
   }
 `;

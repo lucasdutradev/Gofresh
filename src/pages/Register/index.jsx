@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import Logo from "../../images/logoGoFresh.png";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -50,6 +50,9 @@ const RegisterPage = () => {
   return (
     <ContainerBox>
       <RigthBox>
+        <div>
+          <img src={Logo} alt="logo" />
+        </div>
         <h3>Registro</h3>
         <h1>Go fresh in your home</h1>
         <FormBox onSubmit={handleSubmit(onSubmitFunction)}>
