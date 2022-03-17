@@ -17,6 +17,7 @@ export const ImageCard = styled.img`
   height: 137px;
   filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.25));
   border-radius: 10px;
+  object-fit: cover;
 `;
 
 export const ContainerInformation = styled.div`

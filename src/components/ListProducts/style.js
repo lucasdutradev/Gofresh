@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerListProducts = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
+  margin: o auto;
 `;
 
 export const ContainerTitleCardapio = styled.div`
@@ -38,4 +38,6 @@ export const SubTitleCardapio = styled.h1`
 export const ContainerCardListMap = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
 `;
