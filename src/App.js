@@ -1,7 +1,7 @@
-import RegisterPage from "./pages/Register";
+import LoginPage from "./pages/Login";
 
 function App() {
-  return <RegisterPage />;
+  return <LoginPage />;
 }
 
 export default App;
