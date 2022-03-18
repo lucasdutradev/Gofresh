@@ -1,7 +1,7 @@
-import RegisterPage from "./pages/Register";
+import ListProducts from "./components/ListProducts";
 
 function App() {
-  return <RegisterPage />;
+  return <ListProducts />;
 }
 
 export default App;
