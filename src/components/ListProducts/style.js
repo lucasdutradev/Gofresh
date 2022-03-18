@@ -41,3 +41,37 @@ export const ContainerCardListMap = styled.div`
   margin: 0 auto;
   width: 100%;
 `;
+
+export const ContainerPageSelector = styled.div`
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+  margin: 0 auto;
+`;
+
+export const ButtonPage = styled.button`
+  width: 2px;
+  height: 0px;
+  left: 691px;
+  top: 1182px;
+  border: transparent;
+  box-sizing: border-box;
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+`;
+
+export const NumberPage = styled.p`
+  width: 10px;
+  height: 28px;
+  left: 716px;
+  top: 1168px;
+  font-family: "Comic Neue";
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #000000;
+`;

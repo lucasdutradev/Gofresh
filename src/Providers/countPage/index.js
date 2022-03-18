@@ -1,27 +1,24 @@
-import { createContext, useEffect, useState } from "react";
-
+import { createContext, useContext, useEffect, useState } from "react";
+import { ListContext } from "../list";
 import { Api } from "../../services/api";
 
 export const CountPageContext = createContext([]);
 
 export const CountPageProvider = ({ children }) => {
-  const [list, setList] = useState([]);
+  const [sliceList, setSliceList] = useState([]);
   const [countPage, setCountPage] = useState(1);
-  const [totalArray, setTotalArray] = useState();
-  const [newList, setNewList] = useState(list.slice(0, 9));
+  const { list } = useContext(ListContext);
 
   const getList = () => {
     Api.get(`/products?_page=${countPage}&_limit=9`)
       .then((response) => {
-        setList(response.data);
-        setTotalArray(response.headers.link);
-        console.log(response);
+        setSliceList(response.data);
       })
       .catch((err) => console.log(err));
   };
 
   const advancePage = () => {
-    if (3 > countPage) {
+    if (list.length / 9 > countPage) {
       setCountPage(countPage + 1);
     }
   };
@@ -39,16 +36,14 @@ export const CountPageProvider = ({ children }) => {
   return (
     <CountPageContext.Provider
       value={{
-        list,
-        getList,
-        newList,
-        setNewList,
         advancePage,
         goBackPage,
         countPage,
+        sliceList,
+        setSliceList,
       }}
     >
-      {console.log(totalArray)}
+      {console.log(sliceList)}
       {children}
     </CountPageContext.Provider>
   );
