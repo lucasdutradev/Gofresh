@@ -9,6 +9,7 @@ export const ContainerListProducts = styled.div`
 export const ContainerTitleCardapio = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 64px;
   margin-bottom: 10px;
   margin-left: 100px;
 `;

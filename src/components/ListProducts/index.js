@@ -10,13 +10,30 @@ import {
   NumberPage,
 } from "./style";
 import { CountPageContext } from "../../Providers/countPage";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ListContext } from "../../Providers/list";
 
 const ListProducts = () => {
   const { sliceList, countPage, advancePage, goBackPage } =
     useContext(CountPageContext);
+  const { searchList } = useContext(ListContext);
   const next = ">";
   const back = "<";
+  const [finalList, setFinalList] = useState([]);
+
+  const FinalList = () => {
+    if (searchList.length === 0) {
+      setFinalList(sliceList);
+    } else {
+      const initialSlice = (countPage - 1) * 9;
+      const finalSlice = countPage * 9;
+      setFinalList(searchList.slice(initialSlice, finalSlice));
+    }
+  };
+
+  useEffect(() => {
+    FinalList();
+  }, [searchList, sliceList]);
 
   return (
     <ContainerListProducts>
@@ -25,7 +42,7 @@ const ListProducts = () => {
         <SubTitleCardapio>Go fresh in your home</SubTitleCardapio>
       </ContainerTitleCardapio>
       <ContainerCardListMap>
-        {sliceList.map((list, index) => (
+        {finalList.map((list, index) => (
           <div key={index}>
             <CardList data={list} />
           </div>

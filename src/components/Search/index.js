@@ -1,23 +1,28 @@
 import { useContext, useState } from "react";
 import { ListContext } from "../../Providers/list";
 import { CountPageContext } from "../../Providers/countPage";
-import { SearchIcon } from "./style";
+import {
+  SearchIcon,
+  ContainerSearch,
+  InputSearch,
+  ButtonSearch,
+} from "./style";
+import Icon from "../../images/search.png";
 
 const Search = () => {
-  const { list } = useContext(ListContext);
-  const { setSliceList, sliceList } = useContext(CountPageContext);
+  const { list, setSearchList } = useContext(ListContext);
+  const { setCountPage } = useContext(CountPageContext);
   const [input, setInput] = useState("");
 
   const showProducts = (data) => {
-    let newList = [];
     data = data.toLowerCase();
-
     if (data.length === 0) {
-      setSliceList(sliceList);
+      setSearchList([]);
+      setCountPage(1);
     } else {
-      setSliceList(
+      setCountPage(1);
+      setSearchList(
         list.filter((item) => {
-          console.log(item);
           return (
             item.category.toLowerCase().includes(data) ||
             item.name.toLowerCase().includes(data) ||
@@ -30,16 +35,16 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <input
+    <ContainerSearch>
+      <InputSearch
         type="text"
         placeholder="Pesquisar..."
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={() => showProducts(input)}>
-        <img src="../../images/search.png" alt="buscar" />
-      </button>
-    </div>
+      <ButtonSearch onClick={() => showProducts(input)}>
+        <SearchIcon src={Icon} alt="buscar" />
+      </ButtonSearch>
+    </ContainerSearch>
   );
 };
 export default Search;

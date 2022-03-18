@@ -7,7 +7,8 @@ export const CountPageContext = createContext([]);
 export const CountPageProvider = ({ children }) => {
   const [sliceList, setSliceList] = useState([]);
   const [countPage, setCountPage] = useState(1);
-  const { list } = useContext(ListContext);
+  const [finalList, setFinalList] = useState([]);
+  const { list, searchList } = useContext(ListContext);
 
   const getList = () => {
     Api.get(`/products?_page=${countPage}&_limit=9`)
@@ -18,8 +19,14 @@ export const CountPageProvider = ({ children }) => {
   };
 
   const advancePage = () => {
-    if (list.length / 9 > countPage) {
-      setCountPage(countPage + 1);
+    if (searchList.length === 0) {
+      if (list.length / 9 > countPage) {
+        setCountPage(countPage + 1);
+      }
+    } else {
+      if (searchList.length / 9 > countPage) {
+        setCountPage(countPage + 1);
+      }
     }
   };
 
@@ -41,9 +48,11 @@ export const CountPageProvider = ({ children }) => {
         countPage,
         sliceList,
         setSliceList,
+        finalList,
+        setFinalList,
+        setCountPage,
       }}
     >
-      {console.log(sliceList)}
       {children}
     </CountPageContext.Provider>
   );

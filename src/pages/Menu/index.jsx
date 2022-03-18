@@ -1,12 +1,14 @@
 import ListProducts from "../../components/ListProducts";
 import Search from "../../components/Search";
+import { ContainerMenu, BarSeparation } from "./style";
 
 const Menu = () => {
   return (
-    <div>
+    <ContainerMenu>
+      <BarSeparation />
       <Search />
       <ListProducts />
-    </div>
+    </ContainerMenu>
   );
 };
 
