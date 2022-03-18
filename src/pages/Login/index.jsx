@@ -45,7 +45,7 @@ const LoginPage = () => {
   };
 
   if (isLogin) {
-    return <Redirect to="/cardapio" />;
+    return <Redirect to="/menu" />;
   }
 
   return (

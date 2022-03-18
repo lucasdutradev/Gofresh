@@ -1,10 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Api } from "../../services/api";
 
 export const ListContext = createContext([]);
 
 export const ListProvider = ({ children }) => {
   const [list, setList] = useState([]);
+  const [searchList, setSearchList] = useState([]);
 
   const getList = () => {
     Api.get("/products")
@@ -15,8 +16,12 @@ export const ListProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  useEffect(() => {
+    getList();
+  }, []);
+
   return (
-    <ListContext.Provider value={{ list, getList }}>
+    <ListContext.Provider value={{ list, setList, searchList, setSearchList }}>
       {children}
     </ListContext.Provider>
   );
