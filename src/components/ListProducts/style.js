@@ -51,7 +51,6 @@ export const ContainerPageSelector = styled.div`
 `;
 
 export const ButtonPage = styled.button`
-  width: 2px;
   height: 0px;
   left: 691px;
   top: 1182px;

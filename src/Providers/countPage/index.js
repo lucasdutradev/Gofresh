@@ -20,21 +20,12 @@ export const CountPageProvider = ({ children }) => {
 
   const advancePage = () => {
     if (searchList.length === 0) {
-      if (list.length / 9 > countPage) {
-        setCountPage(countPage + 1);
-      }
+      list.length / 9 > countPage && setCountPage(countPage + 1);
     } else {
-      if (searchList.length / 9 > countPage) {
-        setCountPage(countPage + 1);
-      }
+      searchList.length / 9 > countPage && setCountPage(countPage + 1);
     }
   };
-
-  const goBackPage = () => {
-    if (countPage > 1) {
-      setCountPage(countPage - 1);
-    }
-  };
+  const goBackPage = () => countPage > 1 && setCountPage(countPage - 1);
 
   useEffect(() => {
     getList();

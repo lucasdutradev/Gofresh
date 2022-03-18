@@ -17,8 +17,6 @@ const ListProducts = () => {
   const { sliceList, countPage, advancePage, goBackPage } =
     useContext(CountPageContext);
   const { searchList } = useContext(ListContext);
-  const next = ">";
-  const back = "<";
   const [finalList, setFinalList] = useState([]);
 
   const FinalList = () => {
@@ -49,9 +47,9 @@ const ListProducts = () => {
         ))}
       </ContainerCardListMap>
       <ContainerPageSelector>
-        <ButtonPage onClick={goBackPage}>{back}</ButtonPage>
+        <ButtonPage onClick={goBackPage}>&lt;</ButtonPage>
         <NumberPage>{countPage}</NumberPage>
-        <ButtonPage onClick={advancePage}>{next}</ButtonPage>
+        <ButtonPage onClick={advancePage}>&gt;</ButtonPage>
       </ContainerPageSelector>
     </ContainerListProducts>
   );
