@@ -7,8 +7,12 @@ import { ContainerBox, FormBox, LeftBox, RigthBox } from "./style";
 import ButtonDefault from "../../components/Button";
 import { useContext } from "react";
 import { RegisterContext } from "../../Providers/postRegister";
+import { Link } from "react-router-dom";
+import { LoginContext } from "../../Providers/postLogin";
+import { Redirect } from "react-router-dom";
 
 const RegisterPage = () => {
+  const { isLogin } = useContext(LoginContext);
   const { handleSubmitPost } = useContext(RegisterContext);
   const formValidation = yup.object().shape({
     name: yup.string().required("Nome obrigatorio"),
@@ -45,6 +49,10 @@ const RegisterPage = () => {
     };
     handleSubmitPost(data);
   };
+
+  if (isLogin) {
+    return <Redirect to="/cardapio" />;
+  }
 
   return (
     <ContainerBox>
@@ -94,7 +102,10 @@ const RegisterPage = () => {
             placeholder={"Digite seu cep (ex: 00000-000)"}
           />
           <span>
-            Ja possui conta? <p>Login</p>
+            Ja possui conta?
+            <p>
+              <Link to="/login">Login</Link>
+            </p>
           </span>
           <ButtonDefault type="Submit">Registrar</ButtonDefault>
         </FormBox>

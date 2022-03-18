@@ -17,7 +17,7 @@ const fadeInLeft = keyframes`
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
   }
 
   to {
@@ -103,6 +103,7 @@ export const RigthBox = styled.div`
 `;
 
 export const LeftBox = styled.div`
+  animation: ${fadeIn} 2s;
   @media screen and (min-width: 700px) {
     width: 50%;
     height: 100%;
@@ -111,6 +112,5 @@ export const LeftBox = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: 80%;
-    animation: ${fadeIn} 2s;
   }
 `;
