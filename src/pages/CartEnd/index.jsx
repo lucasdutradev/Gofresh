@@ -5,11 +5,7 @@ export const CartEnd = ({ day, people }) => {
   const [userInput, setUserInput] = useState({ hours: "", days: "" });
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
   const receivingDays = ["segunda", "quarta", "sábado"];
-  const calculator = () => {
-    const count = 15 * people * 2 * day;
-    console.log(count);
-    return count;
-  };
+
   return (
     <CartEndStyles>
       <body>

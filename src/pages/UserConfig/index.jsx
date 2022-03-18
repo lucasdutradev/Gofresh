@@ -1,4 +1,3 @@
-import { CartEndStyles } from "../CartEnd/styles";
 import { UserConfigStyles } from "./styles";
 
 export const UserConfig = () => {
