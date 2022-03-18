@@ -5,33 +5,54 @@ import {
   TitleCardapio,
   SubTitleCardapio,
   ContainerCardListMap,
+  ContainerPageSelector,
+  ButtonPage,
+  NumberPage,
 } from "./style";
 import { CountPageContext } from "../../Providers/countPage";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ListContext } from "../../Providers/list";
 
 const ListProducts = () => {
-  const { getList, list, newList, countPage, advancePage, goBackPage } =
+  const { sliceList, countPage, advancePage, goBackPage } =
     useContext(CountPageContext);
+  const { searchList } = useContext(ListContext);
+  const next = ">";
+  const back = "<";
+  const [finalList, setFinalList] = useState([]);
+
+  const FinalList = () => {
+    if (searchList.length === 0) {
+      setFinalList(sliceList);
+    } else {
+      const initialSlice = (countPage - 1) * 9;
+      const finalSlice = countPage * 9;
+      setFinalList(searchList.slice(initialSlice, finalSlice));
+    }
+  };
+
+  useEffect(() => {
+    FinalList();
+  }, [searchList, sliceList]);
 
   return (
     <ContainerListProducts>
-      {console.log(newList)}
       <ContainerTitleCardapio>
         <TitleCardapio>Cardapio</TitleCardapio>
         <SubTitleCardapio>Go fresh in your home</SubTitleCardapio>
       </ContainerTitleCardapio>
       <ContainerCardListMap>
-        {list.map((list, index) => (
+        {finalList.map((list, index) => (
           <div key={index}>
             <CardList data={list} />
           </div>
         ))}
-        <div className="pageSelector">
-          <button onClick={goBackPage}> anterior</button>
-          <p>{countPage}</p>
-          <button onClick={advancePage}> proximo </button>
-        </div>
       </ContainerCardListMap>
+      <ContainerPageSelector>
+        <ButtonPage onClick={goBackPage}>{back}</ButtonPage>
+        <NumberPage>{countPage}</NumberPage>
+        <ButtonPage onClick={advancePage}>{next}</ButtonPage>
+      </ContainerPageSelector>
     </ContainerListProducts>
   );
 };
