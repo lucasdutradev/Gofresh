@@ -1,8 +1,16 @@
-import { UserConfigStyles } from "./styles";
+import { UserConfigStyles } from "./style";
 
 export const UserConfig = () => {
   const days = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
   const people = [1, 2, 3, 4, 5, 6, 7];
+  const cards = [
+    { name: "visa", img: "visaIcon.png" },
+    { name: "master", img: "masterIcon.png" },
+    { name: "payPal", img: "payPalIcon.png" },
+    { name: "boleto", img: "boletoIcon.png" },
+    { name: "americanExpress", img: "americanExpress.png" },
+    { name: "elo", img: "eloIcon.png" },
+  ];
   return (
     <UserConfigStyles>
       <body>
@@ -12,8 +20,8 @@ export const UserConfig = () => {
         <div className="container">
           <div className="iconContainer">
             <div className="icon">L</div>
-            <div>Nome do usuário</div>
           </div>
+          <h1>Nome do usuário</h1>
 
           <div className="configsContainer">
             {" "}
@@ -27,10 +35,11 @@ export const UserConfig = () => {
               <button key={i}>{e}</button>
             ))}
             <h2>Adicione uma forma de pagamento:</h2>
-            {/* {cards.map((e,i) => (
-          <button key={i}>{e.img}</button>
-        ))} */}
-            {/* INSERIR ARRAY DE CARTÕES NO MAP */}
+            {cards.map((e, i) => (
+              <button className="payment" key={i}>
+                <img src={e.img} alt={e.name} />
+              </button>
+            ))}
           </div>
         </div>
       </body>

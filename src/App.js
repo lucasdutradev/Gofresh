@@ -1,7 +1,9 @@
-import "./App.css";
+import ListProducts from "./components/ListProducts";
+import { CartEnd } from "./pages/CartEnd";
+import { UserConfig } from "./pages/UserConfig";
 
 function App() {
-  return <div className="App"></div>;
+  return <UserConfig />;
 }
 
 export default App;

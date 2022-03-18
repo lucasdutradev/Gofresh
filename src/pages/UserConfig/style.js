@@ -13,15 +13,18 @@ export const UserConfigStyles = styled.div`
     text-align: left;
     padding-top: 20px;
     padding-left: 20px;
-    background-color: grey;
+    background-color: rgba(238, 238, 238, 1);
+    border-radius: 0 0 35px 35px;
   }
 
   header button {
+    cursor: pointer;
     height: 35px;
     width: 94px;
     border-style: none;
-    background-color: #cfdf6e;
+    background-color: rgba(207, 223, 110, 1);
     color: white;
+    border-radius: 12px;
   }
 
   .icon {
@@ -32,7 +35,7 @@ export const UserConfigStyles = styled.div`
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    background-color: #c4c4c4;
+    background-color: rgba(196, 196, 196, 1);
     font-size: 42px;
 
     display: flex;
@@ -40,7 +43,14 @@ export const UserConfigStyles = styled.div`
     align-items: center;
   }
 
+  h1 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: lighter;
+  }
+
   .configsContainer {
+    margin-top: 30px;
     text-align: left;
     padding-left: 30px;
   }
@@ -50,16 +60,29 @@ export const UserConfigStyles = styled.div`
   }
 
   .configsContainer h2 {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .configsContainer button {
+    cursor: pointer;
+
     border-style: none;
     margin-right: 10px;
     width: fit-content;
     height: 30px;
     padding: 5px;
     border-radius: 10px;
+  }
+
+  .payment {
+    cursor: pointer;
+
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
   }
 
   .configsContainer button:active {

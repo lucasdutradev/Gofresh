@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CartEndStyles } from "./styles";
+import { CartEndStyles } from "./style";
 
 export const CartEnd = ({ day, people }) => {
   const [userInput, setUserInput] = useState({ hours: "", days: "" });
@@ -49,10 +49,13 @@ export const CartEnd = ({ day, people }) => {
           <div className="lunchPrices">
             <p>Preço de cada refeição:</p>
             <p>R$ 15,00</p>
+            <input placeholder="Digite o código de convite"></input>
           </div>
 
-          <h3>Total: R$ {15 * people * 2 * day},00</h3>
-          <button>PAGAR</button>
+          {/* <h3>Total: R$ {15 * people * 2 * day},00</h3> */}
+          <div className="containerButton">
+            <button>PAGAR</button>
+          </div>
         </div>
       </body>
     </CartEndStyles>
