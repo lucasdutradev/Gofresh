@@ -9,15 +9,13 @@ import {
 } from "./styles";
 
 const CardList = ({ data }) => {
-  const rating = data.note;
-
   return (
     <ContainerCardList>
       <ImageCard src={data.img} alt={data.name} />
       <ContainerInformation>
         <RatingStar>
           {[1, 2, 3, 4, 5].map((index) => (
-            <RatingIcon key={index} index={index} rating={rating} />
+            <RatingIcon key={index} index={index} rating={data.note} />
           ))}
         </RatingStar>
         <TitleName>{data.name}</TitleName>
