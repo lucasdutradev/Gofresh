@@ -15,4 +15,9 @@ export const DefaultStyles = createGlobalStyle`
     h1, h2, span, p{
         font-family: 'Inter', sans-serif;
     }
+
+    a{
+        text-decoration: none;
+        color: #e64d34;
+    }
 `;
