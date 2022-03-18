@@ -5,7 +5,7 @@ import svgLogin from "../../images/login.svg";
 const fadeInLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
   }
 
   to {
@@ -17,7 +17,7 @@ const fadeInLeft = keyframes`
 const fadeIn = keyframes`
   from {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(50px);
   }
 
   to {

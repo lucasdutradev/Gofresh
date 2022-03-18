@@ -10,8 +10,7 @@ export const RegisterProvider = ({ children }) => {
       .then((_) => {
         toast.success("Registrado com sucesso!");
       })
-      .catch((err) => {
-        console.log(err.response);
+      .catch((_) => {
         toast.error("E-mail ja existente");
       });
   };
