@@ -10,13 +10,8 @@ import { CountPageContext } from "../../Providers/countPage";
 import { useContext, useEffect } from "react";
 
 const ListProducts = () => {
-  const { getList, list, newList, page, advancePage, goBackPage } =
+  const { getList, list, newList, countPage, advancePage, goBackPage } =
     useContext(CountPageContext);
-  const newLength = newList.length;
-
-  useEffect(() => {
-    getList();
-  }, []);
 
   return (
     <ContainerListProducts>
@@ -26,14 +21,14 @@ const ListProducts = () => {
         <SubTitleCardapio>Go fresh in your home</SubTitleCardapio>
       </ContainerTitleCardapio>
       <ContainerCardListMap>
-        {newList.map((list, index) => (
+        {list.map((list, index) => (
           <div key={index}>
             <CardList data={list} />
           </div>
         ))}
         <div className="pageSelector">
           <button onClick={goBackPage}> anterior</button>
-          <p>{page}</p>
+          <p>{countPage}</p>
           <button onClick={advancePage}> proximo </button>
         </div>
       </ContainerCardListMap>
