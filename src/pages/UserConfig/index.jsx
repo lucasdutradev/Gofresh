@@ -30,7 +30,6 @@ export const UserConfig = () => {
           <h1>Nome do usuário</h1>
 
           <div className="configsContainer">
-            {" "}
             <p>configurações</p>
             <h2>Selecione o dia de recebimento:</h2>
             {days.map((e, i) => (

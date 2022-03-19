@@ -51,7 +51,7 @@ const RegisterPage = () => {
   };
 
   if (isLogin) {
-    return <Redirect to="/cardapio" />;
+    return <Redirect to="/menu" />;
   }
 
   return (

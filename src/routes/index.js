@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { CartEnd } from "../pages/CartEnd";
 import LoginPage from "../pages/Login";
 import Menu from "../pages/Menu";
+import PageNotFound from "../pages/PageNotFound";
 import RegisterPage from "../pages/Register";
 import { UserConfig } from "../pages/UserConfig";
 import { LoginContext } from "../Providers/postLogin";
@@ -33,6 +34,9 @@ const DefaultRoutes = () => {
       </Route>
       <Route exact path="/cartEnd">
         <CartEnd />
+      </Route>
+      <Route path="*">
+        <PageNotFound />
       </Route>
     </Switch>
   );
