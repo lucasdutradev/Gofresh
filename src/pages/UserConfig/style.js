@@ -68,21 +68,34 @@ export const UserConfigStyles = styled.div`
 
   .configsContainer button {
     cursor: pointer;
-
     border-style: none;
+    margin-bottom: 10px;
     margin-right: 10px;
     width: fit-content;
     height: 30px;
-    padding: 5px;
+    padding: 5px 20px 5px 20px;
     border-radius: 10px;
+  }
+
+  ul {
+    width: 90%;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 35px;
+    margin: 5px 10px 5px 10px;
   }
 
   .payment {
     cursor: pointer;
-
     background-color: white;
-    height: fit-content;
-    width: fit-content;
   }
 
   .configsContainer button:active {

@@ -8,9 +8,10 @@ export const UserConfig = () => {
     { name: "master", img: "masterIcon.png" },
     { name: "payPal", img: "payPalIcon.png" },
     { name: "boleto", img: "boletoIcon.png" },
-    { name: "americanExpress", img: "americanExpress.png" },
+    { name: "americanExpress", img: "americanExpressIcon.png" },
     { name: "elo", img: "eloIcon.png" },
   ];
+
   return (
     <UserConfigStyles>
       <body>
@@ -35,11 +36,15 @@ export const UserConfig = () => {
               <button key={i}>{e}</button>
             ))}
             <h2>Adicione uma forma de pagamento:</h2>
-            {cards.map((e, i) => (
-              <button className="payment" key={i}>
-                <img src={e.img} alt={e.name} />
-              </button>
-            ))}
+            <ul>
+              {cards.map((e, i) => (
+                <li key={i}>
+                  <button className="payment">
+                    <img src={e.img} alt={e.name} />
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </body>
