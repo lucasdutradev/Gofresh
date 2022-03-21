@@ -1,7 +1,7 @@
-import ListProducts from "./components/ListProducts";
+import DefaultRoutes from "./routes";
 
 function App() {
-  return <ListProducts />;
+  return <DefaultRoutes />;
 }
 
 export default App;
