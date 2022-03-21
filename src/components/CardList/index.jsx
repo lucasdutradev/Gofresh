@@ -14,6 +14,7 @@ import { CartContext } from "../../Providers/cart";
 import { useContext } from "react";
 
 const CardList = ({ data }) => {
+<<<<<<< HEAD:src/components/CardList/index.js
   const rating = data.note;
   const { addToCart } = useContext(CartContext);
 
@@ -21,6 +22,8 @@ const CardList = ({ data }) => {
     addToCart(item);
   };
 
+=======
+>>>>>>> 0a05279b78049411da122a74da8a25ac0f0d46f5:src/components/CardList/index.jsx
   return (
     <ContainerCardList>
       <ImageCard src={data.img} alt={data.name} />

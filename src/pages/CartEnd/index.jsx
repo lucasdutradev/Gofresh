@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 import { CartEndStyles } from "./style";
 
 export const CartEnd = ({ day, people }) => {
   const [userInput, setUserInput] = useState({ hours: "", days: "" });
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
   const receivingDays = ["segunda", "quarta", "sábado"];
+
+  if (!localStorage.getItem("@Token")) {
+    return <Redirect to="/login" />;
+  }
 
   return (
     <CartEndStyles>

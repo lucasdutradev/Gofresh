@@ -16,9 +16,7 @@ export const ListProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
-  useEffect(() => {
-    getList();
-  }, []);
+  useEffect(() => getList(), []);
 
   return (
     <ListContext.Provider value={{ list, setList, searchList, setSearchList }}>

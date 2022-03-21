@@ -20,4 +20,9 @@ export const DefaultStyles = createGlobalStyle`
     button{
         cursor: pointer;
     }
+
+    a{
+        text-decoration: none;
+        color: #e64d34;
+    }
 `;

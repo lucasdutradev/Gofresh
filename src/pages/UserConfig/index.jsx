@@ -1,3 +1,4 @@
+import { Redirect } from "react-router-dom";
 import { UserConfigStyles } from "./style";
 
 export const UserConfig = () => {
@@ -11,6 +12,11 @@ export const UserConfig = () => {
     { name: "americanExpress", img: "americanExpress.png" },
     { name: "elo", img: "eloIcon.png" },
   ];
+
+  if (!localStorage.getItem("@Token")) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <UserConfigStyles>
       <body>
@@ -24,7 +30,6 @@ export const UserConfig = () => {
           <h1>Nome do usuário</h1>
 
           <div className="configsContainer">
-            {" "}
             <p>configurações</p>
             <h2>Selecione o dia de recebimento:</h2>
             {days.map((e, i) => (
