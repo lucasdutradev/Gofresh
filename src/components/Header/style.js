@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.section`
     width: 100%;
-    height: 50px;
+    min-height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +27,7 @@ export const StyledBurger = styled.div`
 
     div {
         width: 2rem;
-        height: 4px;
+        height: 3.5px;
         background-color: var(--red);
         border-radius: 10px;
         transform-origin: 3.5px;

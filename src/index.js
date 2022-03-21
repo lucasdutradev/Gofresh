@@ -2,16 +2,19 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import Provider from "./Providers";
-import GlobalStyle from "./styles";
+import DefaultStyles from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.render(
     <React.StrictMode>
-        <GlobalStyle />
+        <DefaultStyles />
         <Provider>
             <ToastContainer />
-            <App />
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
         </Provider>
     </React.StrictMode>,
     document.getElementById("root")

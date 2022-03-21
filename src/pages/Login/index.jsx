@@ -19,9 +19,11 @@ import { useContext } from "react";
 import { FaFacebookF } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { LoginContext } from "../../Providers/postLogin";
+import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const LoginPage = () => {
-    const { handleSubmitPostLogin } = useContext(LoginContext);
+    const { handleSubmitPostLogin, isLogin } = useContext(LoginContext);
     const formValidation = yup.object().shape({
         email: yup
             .string()
@@ -41,6 +43,10 @@ const LoginPage = () => {
     const onSubmitFunction = (data) => {
         handleSubmitPostLogin(data);
     };
+
+    if (isLogin) {
+        return <Redirect to="/menu" />;
+    }
 
     return (
         <ContainerBox>
@@ -69,7 +75,10 @@ const LoginPage = () => {
                     />
 
                     <span className="register-box">
-                        Não possui conta? <p>Cadastre-se</p>
+                        Não possui conta?
+                        <p>
+                            <Link to="/register">Cadastre</Link>
+                        </p>
                     </span>
                     <ButtonDefault type="Submit">Login</ButtonDefault>
                 </FormBox>

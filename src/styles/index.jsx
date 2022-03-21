@@ -12,7 +12,7 @@ export default createGlobalStyle`
             height: 100vh;
         }
     }
-
+    
     h3{
         font-family: 'Comic Neue', cursive;
         font-style: italic;
@@ -29,5 +29,14 @@ export default createGlobalStyle`
         --green: #1F3000;
         --gray: #333333;
         --lima: #CFDF6E;
+    }
+    
+    button{
+        cursor: pointer;
+    }
+
+    a{
+        text-decoration: none;
+        color: #e64d34;
     }
 `;
