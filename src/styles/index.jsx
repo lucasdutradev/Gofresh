@@ -1,11 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
-export const DefaultStyles = createGlobalStyle`
+export default createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
+    html {
+        #root {
+            width: 100vw;
+            height: 100vh;
+        }
+    }
+
     h3{
         font-family: 'Comic Neue', cursive;
         font-style: italic;

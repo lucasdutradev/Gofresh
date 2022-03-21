@@ -10,12 +10,11 @@ import { CountPageContext } from "../../Providers/countPage";
 import { useContext } from "react";
 
 const ListProducts = () => {
-    const { list, newList, countPage, advancePage, goBackPage } =
+    const { list, countPage, advancePage, goBackPage } =
         useContext(CountPageContext);
 
     return (
         <ContainerListProducts>
-            {console.log(newList)}
             <ContainerTitleCardapio>
                 <TitleCardapio>Cardapio</TitleCardapio>
                 <SubTitleCardapio>Go fresh in your home</SubTitleCardapio>
