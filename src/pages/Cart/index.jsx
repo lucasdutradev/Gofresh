@@ -1,10 +1,12 @@
 import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
-import { useState, useHistory } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
 
 const Cart = ({ data }) => {
-  const [cart, setCart] = useState([]);
-  const history = useHistory();
+  // const [cart, setCart] = useState([]);
+  const { cart } = useContext(CartContext);
+  // const history = useHistory();
   return (
     <ContainerCart>
       <div className="containerBody">
