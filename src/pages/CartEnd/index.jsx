@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { CartEndStyles } from "./style";
 import { CartEndAux } from "../../components/cartEndAux";
