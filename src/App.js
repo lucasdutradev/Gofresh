@@ -1,9 +1,7 @@
-import ListProducts from "./components/ListProducts";
-import { CartEnd } from "./pages/CartEnd";
-import { UserConfig } from "./pages/UserConfig";
+import DefaultRoutes from "./routes";
 
 function App() {
-  return <UserConfig />;
+    return <DefaultRoutes />;
 }
 
 export default App;
