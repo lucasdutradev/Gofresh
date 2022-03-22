@@ -33,18 +33,8 @@ export const ContainerCart = styled.div`
     margin-bottom: 20px;
   }
 
-  span {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 15px;
-    line-height: 8px;
-    letter-spacing: 0.01em;
-    color: rgba(0, 0, 0, 0.8);
-  }
-
   .containerCart button {
-    width: 280px;
+    width: 85%;
     height: 50px;
     margin-top: 20px;
     cursor: pointer;

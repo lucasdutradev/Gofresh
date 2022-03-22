@@ -3,22 +3,29 @@ import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { ConfigsContainer } from "../../components/configHandler";
-import { Link } from "react-router-dom";
-import { ButtonReturn } from "../../components/ButtonReturn";
+import { HeaderB } from "../../components/HeaderB";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const UserConfig = () => {
-  const { selected, setSelected, userInfo } = useContext(ConfigContext);
+  const history = useHistory();
 
+  const { selected, setSelected, userInfo } = useContext(ConfigContext);
+  console.log(selected);
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
   }
 
+  const handleSubmit = () => {
+    selected.activeDay & selected.activeMeal
+      ? history.push("/cartEnd")
+      : toast.error("Selecione as opções.");
+  };
+
   return (
     <UserConfigStyles>
       <>
-        <header>
-          <ButtonReturn />
-        </header>
+        <HeaderB />
 
         {userInfo.name && (
           <div className="container">
@@ -30,9 +37,9 @@ export const UserConfig = () => {
           </div>
         )}
 
-        <p className="toCartEnd">
-          <Link to="/cartEnd">Finalizar</Link>
-        </p>
+        <button onClick={handleSubmit} className="toCartEnd">
+          Finalizar
+        </button>
       </>
     </UserConfigStyles>
   );

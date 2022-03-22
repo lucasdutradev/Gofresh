@@ -41,23 +41,30 @@ export const ConfigsContainer = () => {
     <div className="configsContainer">
       <p>configurações</p>
       <h2>Selecione o dia de recebimento:</h2>
-      {days.map((day, i) => (
-        <button id={day} key={i} onClick={() => onClickDay(day)}>
-          {day}
-        </button>
-      ))}
+      <div className="mapContainer">
+        {days.map((day, i) => (
+          <button id={day} key={i} onClick={() => onClickDay(day)}>
+            {day}
+          </button>
+        ))}
+      </div>
       <h2>Quantas pessoas comem por refeição?</h2>
-      {people.map((person, i) => (
-        <button id={person} key={i} onClick={() => onClickPPMeal(person)}>
-          {person}
-        </button>
-      ))}
+      <div className="mapContainer">
+        {people.map((person, i) => (
+          <button id={person} key={i} onClick={() => onClickPPMeal(person)}>
+            {person}
+          </button>
+        ))}
+      </div>
+
       <h2>Adicione uma forma de pagamento:</h2>
-      {cards.map((card, i) => (
-        <button id={card.name} className="payment" key={i}>
-          <img src={card.img} alt={card.name} />
-        </button>
-      ))}
+      <div className="mapContainer">
+        {cards.map((card, i) => (
+          <button id={card.name} className="payment" key={i}>
+            <img src={card.img} alt={card.name} />
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
