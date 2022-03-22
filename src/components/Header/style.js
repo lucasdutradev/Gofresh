@@ -15,7 +15,7 @@ export const HeaderStyled = styled.section`
 
 export const StyledBurger = styled.div`
     width: 2rem;
-    height: 1.7rem;
+    height: 1.9rem;
     position: fixed;
     top: 15px;
     right: 30px;
@@ -27,10 +27,10 @@ export const StyledBurger = styled.div`
 
     div {
         width: 2rem;
-        height: 3.5px;
+        height: 4px;
         background-color: var(--red);
         border-radius: 10px;
-        transform-origin: 3.5px;
+        transform-origin: 1.5px;
         transition: all 0.3s linear;
 
         :nth-child(1) {
