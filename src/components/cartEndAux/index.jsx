@@ -10,7 +10,6 @@ export const CartEndAux = () => {
   const calculator = () => {
     return 15 * parseInt(userInput.infoMeal) * 2 * parseInt(userInput.days);
   };
-  let info = JSON.parse(localStorage.getItem("@Info"));
 
   let width = window.screen.width;
 
