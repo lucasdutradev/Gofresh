@@ -9,10 +9,6 @@ export const CartEnd = () => {
     return <Redirect to="/login" />;
   }
 
-  if (!localStorage.getItem("@InfoDay")) {
-    return <Redirect to="/configuration" />;
-  }
-
   return (
     <CartEndStyles>
       <body>

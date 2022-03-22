@@ -6,25 +6,28 @@ import { HeaderProvider } from "./header";
 import { CartProvider } from "./cart";
 import { ChangeCategoryProvider } from "./changeCategory";
 import { ConfigProvider } from "./userConfig";
+import { CartEndProvider } from "./cartEnd";
 
 const Provider = ({ children }) => {
-    return (
-        <ChangeCategoryProvider>
-            <ConfigProvider>
-                <CartProvider>
-                    <ListProvider>
-                        <CountPageProvider>
-                            <HeaderProvider>
-                                <RegisterProvider>
-                                    <LoginProvider>{children}</LoginProvider>
-                                </RegisterProvider>
-                            </HeaderProvider>
-                        </CountPageProvider>
-                    </ListProvider>
-                </CartProvider>
-            </ConfigProvider>
-        </ChangeCategoryProvider>
-    );
+  return (
+    <CartEndProvider>
+      <ChangeCategoryProvider>
+        <ConfigProvider>
+          <CartProvider>
+            <ListProvider>
+              <CountPageProvider>
+                <HeaderProvider>
+                  <RegisterProvider>
+                    <LoginProvider>{children}</LoginProvider>
+                  </RegisterProvider>
+                </HeaderProvider>
+              </CountPageProvider>
+            </ListProvider>
+          </CartProvider>
+        </ConfigProvider>
+      </ChangeCategoryProvider>
+    </CartEndProvider>
+  );
 };
 
 export default Provider;

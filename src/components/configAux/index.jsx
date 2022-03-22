@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
+import { CartEndContext } from "../../Providers/cartEnd";
 
 export const days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 export const people = [1, 2, 3, 4, 5, 6, 7];
@@ -15,15 +16,10 @@ export const cards = [
 
 export const ConfigsContainer = () => {
   const { selected, setSelected } = useContext(ConfigContext);
-  console.log(selected);
+  const { userInput, setUserInput } = useContext(CartEndContext);
 
   const onClickDay = (e) => {
-    console.log(e);
-    let existing = localStorage.getItem("@Info");
-    existing = existing
-      ? JSON.parse(existing)
-      : localStorage.setItem("@InfoDay", JSON.stringify(e));
-    console.log(existing);
+    setUserInput({ ...userInput, infoDay: e });
 
     if (selected.activeDay) {
       let lastSelected = document.getElementById(selected.idDay);
@@ -37,12 +33,7 @@ export const ConfigsContainer = () => {
     btnElement.style.color = "white";
   };
   const onClickPPMeal = (e) => {
-    console.log(e);
-    let existing = localStorage.getItem("@Info");
-    existing = existing
-      ? JSON.parse(existing)
-      : localStorage.setItem("@InfoMeal", JSON.stringify(e));
-    console.log(existing);
+    setUserInput({ ...userInput, infoMeal: e });
 
     if (selected.activeMeal) {
       let lastSelected = document.getElementById(selected.idMeal);
