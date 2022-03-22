@@ -3,59 +3,30 @@ import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { ConfigsContainer } from "../../components/configHandler";
-import { Link } from "react-router-dom";
-import { ButtonReturn } from "../../components/ButtonReturn";
+import { HeaderB } from "../../components/HeaderB";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const UserConfig = () => {
-<<<<<<< HEAD
-  const days = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
-  const people = [1, 2, 3, 4, 5, 6, 7];
-  const cards = [
-    { name: "visa", img: "visaIcon.png" },
-    { name: "master", img: "masterIcon.png" },
-    { name: "payPal", img: "payPalIcon.png" },
-    { name: "boleto", img: "boletoIcon.png" },
-    { name: "americanExpress", img: "americanExpressIcon.png" },
-    { name: "elo", img: "eloIcon.png" },
-  ];
-=======
-  const { selected, setSelected, userInfo } = useContext(ConfigContext);
+  const history = useHistory();
 
+  const { selected, setSelected, userInfo } = useContext(ConfigContext);
+  console.log(selected);
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
   }
->>>>>>> 74526c243b77db260fd49869b564e1b4e21cb552
+
+  const handleSubmit = () => {
+    selected.activeDay & selected.activeMeal
+      ? history.push("/cartEnd")
+      : toast.error("Selecione as opções.");
+  };
 
   return (
     <UserConfigStyles>
       <>
-        <header>
-          <ButtonReturn />
-        </header>
+        <HeaderB />
 
-<<<<<<< HEAD
-          <div className="configsContainer">
-            {" "}
-            <p>configurações</p>
-            <h2>Selecione o dia de recebimento:</h2>
-            {days.map((e, i) => (
-              <button key={i}>{e}</button>
-            ))}
-            <h2>Quantas pessoas comem por refeição?</h2>
-            {people.map((e, i) => (
-              <button key={i}>{e}</button>
-            ))}
-            <h2>Adicione uma forma de pagamento:</h2>
-            <ul>
-              {cards.map((e, i) => (
-                <li key={i}>
-                  <button className="payment">
-                    <img src={e.img} alt={e.name} />
-                  </button>
-                </li>
-              ))}
-            </ul>
-=======
         {userInfo.name && (
           <div className="container">
             <div className="iconContainer">
@@ -63,13 +34,12 @@ export const UserConfig = () => {
             </div>
             <h1>{userInfo.name}</h1>
             <ConfigsContainer />
->>>>>>> 74526c243b77db260fd49869b564e1b4e21cb552
           </div>
         )}
 
-        <p className="toCartEnd">
-          <Link to="/cartEnd">Finalizar</Link>
-        </p>
+        <button onClick={handleSubmit} className="toCartEnd">
+          Finalizar
+        </button>
       </>
     </UserConfigStyles>
   );

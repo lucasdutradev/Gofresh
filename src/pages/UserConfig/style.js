@@ -50,6 +50,10 @@ export const UserConfigStyles = styled.div`
   }
 
   .configsContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-top: 20px;
     text-align: left;
     padding-left: 30px;
@@ -67,6 +71,10 @@ export const UserConfigStyles = styled.div`
   }
 
   .configsContainer button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     border-style: none;
     margin-bottom: 10px;
@@ -80,7 +88,6 @@ export const UserConfigStyles = styled.div`
   }
 
   ul {
-    width: 90%;
     display: flex;
     list-style: none;
     flex-wrap: wrap;
@@ -92,10 +99,11 @@ export const UserConfigStyles = styled.div`
     justify-content: center;
     width: 54px;
     height: 35px;
-    margin: 5px 10px 5px 10px;
+    margin: 5px;
   }
 
   .payment {
+    margin-top: 10px;
     cursor: pointer;
     background-color: white;
   }
@@ -114,7 +122,14 @@ export const UserConfigStyles = styled.div`
     justify-content: center;
   }
 
-  .toCartEnd a {
+  .mapContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .toCartEnd {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,7 +139,6 @@ export const UserConfigStyles = styled.div`
     border-radius: 5px;
     background-color: rgba(244, 67, 53, 1);
     color: #fff;
-    width: 85%;
     height: 50px;
     font-size: 18px;
     font-weight: bolder;
