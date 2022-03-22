@@ -1,18 +1,15 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { CartEndContext } from "../../Providers/cartEnd";
 
 export const CartEndAux = () => {
-  const [userInput, setUserInput] = useState({ hours: "", days: 0 });
+  const { userInput, setUserInput } = useContext(CartEndContext);
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
   const eatingDays = [1, 2, 3, 4, 5, 6, 7];
 
-  const infoDay = JSON.parse(localStorage.getItem("@InfoDay"));
-  const infoMeal = JSON.parse(localStorage.getItem("@InfoMeal"));
-  console.log(infoMeal);
   const calculator = () => {
-    return 15 * infoMeal * 2 * parseInt(userInput.days);
+    return 15 * parseInt(userInput.infoMeal) * 2 * parseInt(userInput.days);
   };
-  let info = JSON.parse(localStorage.getItem("@Info"));
-  console.log(info);
 
   let width = window.screen.width;
 
@@ -21,7 +18,7 @@ export const CartEndAux = () => {
       <h1>Finalizar</h1>
       <div className="container">
         <div className="container1">
-          <p>{`Dia de recebimento: ${infoDay}`}</p>
+          <p>{`Dia de recebimento: ${userInput.infoDay}`}</p>
           <p>
             Horário de recebimento:
             <select
@@ -37,7 +34,7 @@ export const CartEndAux = () => {
               ))}
             </select>
           </p>
-          <p>{`Pessoas por refeição: ${infoMeal}`}</p>
+          <p>{`Pessoas por refeição: ${userInput.infoMeal}`}</p>
           <p>
             Refeições para quantos dias?
             <select

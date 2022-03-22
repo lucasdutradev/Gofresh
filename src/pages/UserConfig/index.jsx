@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import { ButtonReturn } from "../../components/ButtonReturn";
 
 export const UserConfig = () => {
-  const { selected, setSelected } = useContext(ConfigContext);
-  const user = JSON.parse(localStorage.getItem("@UserName"));
+  const { selected, setSelected, userInfo } = useContext(ConfigContext);
 
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
@@ -21,13 +20,17 @@ export const UserConfig = () => {
         <header>
           <ButtonReturn />
         </header>
-        <div className="container">
-          <div className="iconContainer">
-            <div className="icon">{user}</div>
+
+        {userInfo.name && (
+          <div className="container">
+            <div className="iconContainer">
+              <div className="icon">{userInfo.name[0]}</div>
+            </div>
+            <h1>{userInfo.name}</h1>
+            <ConfigsContainer />
           </div>
-          <h1>{user}</h1>
-          <ConfigsContainer />
-        </div>
+        )}
+
         <p className="toCartEnd">
           <Link to="/cartEnd">Finalizar</Link>
         </p>
