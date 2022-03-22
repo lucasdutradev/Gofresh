@@ -4,9 +4,14 @@ import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
 import { useHistory } from "react-router-dom/";
 const Cart = ({ data }) => {
+<<<<<<< HEAD
   // const [cart, setCart] = useState([]);
   const { cart } = useContext(CartContext);
   const history = useHistory();
+=======
+  const { cart, pushProduct } = useContext(CartContext);
+  console.log(cart);
+>>>>>>> e863958acbdc41f8a932e97ca393e5acf21d56d5
   return (
     <ContainerCart>
       <div className="containerBody">
@@ -16,10 +21,10 @@ const Cart = ({ data }) => {
         <div className="containerCart">
           <h1>Carrinho</h1>
           {cart.map((data) => (
-            <CardList data={data} />
+            <CardList negative data={data} />
           ))}
           <div className="containerCartButton">
-            <button>Finalizar</button>
+            <button onClick={() => pushProduct()}>Finalizar</button>
           </div>
         </div>
       </div>
