@@ -40,6 +40,9 @@ const DefaultRoutes = () => {
       <Route exact path="/cart">
         <Cart />
       </Route>
+      <Route exact path="/orderDetails">
+        <OrderDetails />
+      </Route>
       <Route path="*">
         <PageNotFound />
       </Route>

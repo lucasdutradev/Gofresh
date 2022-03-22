@@ -1,5 +1,15 @@
 import { Redirect } from "react-router-dom";
-import { PrincipalContainer, Header, Main } from "./style";
+import {
+  PrincipalContainer,
+  Header,
+  Main,
+  Section1,
+  Section2,
+  Section3,
+  Section4,
+  Section5,
+  Section6,
+} from "./style";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
@@ -18,12 +28,10 @@ export const OrderDetails = () => {
         <button onClick={() => history.push("/menu")}>IR PARA LISTA</button>
       </Header>
       <Main>
-        <section1>
-          <div>
-            <h1>Detalhes do pedido</h1>
-          </div>
-        </section1>
-        <section2>
+        <Section1>
+          <h1>Detalhes do pedido</h1>
+        </Section1>
+        <Section2>
           <p>
             Entrega do pedido: <span>Segunda-feira</span>
           </p>
@@ -33,16 +41,16 @@ export const OrderDetails = () => {
           <p>
             Total: <span>R$250,00</span>
           </p>
-        </section2>
+        </Section2>
 
-        <section3>
+        <Section3>
           <button onClick={() => setChange(true)}>Status atual</button>
           <button onClick={() => setChange(false)}>Descrição</button>
-        </section3>
+        </Section3>
 
         {change ? (
           <div>
-            <section4>
+            <Section4>
               <div1>
                 <button> ✔️ </button>
                 <span>│</span>
@@ -58,20 +66,20 @@ export const OrderDetails = () => {
                 <p>Saindo para entrega</p>
                 <p>Entregue</p>
               </div2>
-            </section4>
-            <section5>
+            </Section4>
+            <Section5>
               <button>CHEGOU!</button>
-            </section5>
+            </Section5>
           </div>
         ) : (
-          <section6>
+          <Section6>
             <div>
               <p>Refeição suficiente para X dias e X pessoas.</p>
               <span>Nome do prato.</span>
               <span>Nome do prato.</span>
               <span>Nome do prato.</span>
             </div>
-          </section6>
+          </Section6>
         )}
       </Main>
     </PrincipalContainer>
