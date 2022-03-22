@@ -27,7 +27,7 @@ const DefaultRoutes = () => {
             <Route path="/login" component={() => <LoginPage />} />
             <Route path="/register" component={() => <RegisterPage />} />
             <Route path="/configuration" component={() => <UserConfig />} />
-            <Route path="/cartEnd" component={() => <CartEnd />} />
+            <Route path="/cartend" component={() => <CartEnd />} />
             <Route path="/cart" component={() => <Cart />} />
             <Route exact path="*" component={() => <PageNotFound />} />
         </Switch>
