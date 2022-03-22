@@ -3,12 +3,7 @@ import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { useState } from "react";
-import {
-  days,
-  people,
-  cards,
-  ConfigsContainer,
-} from "../../components/configAux";
+import { ConfigsContainer } from "../../components/configAux";
 import { Link } from "react-router-dom";
 
 export const UserConfig = () => {
