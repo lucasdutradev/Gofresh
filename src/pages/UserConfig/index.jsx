@@ -2,8 +2,7 @@ import { Redirect } from "react-router-dom";
 import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
-import { useState } from "react";
-import { ConfigsContainer } from "../../components/configAux";
+import { ConfigsContainer } from "../../components/configHandler";
 import { Link } from "react-router-dom";
 import { ButtonReturn } from "../../components/ButtonReturn";
 
