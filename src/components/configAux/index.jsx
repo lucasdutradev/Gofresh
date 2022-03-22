@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 
-export const days = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+export const days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 export const people = [1, 2, 3, 4, 5, 6, 7];
 export const cards = [
   { name: "visa", img: "visaIcon.png" },
