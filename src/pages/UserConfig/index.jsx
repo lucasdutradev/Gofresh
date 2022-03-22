@@ -5,6 +5,7 @@ import { ConfigContext } from "../../Providers/userConfig";
 import { useState } from "react";
 import { ConfigsContainer } from "../../components/configAux";
 import { Link } from "react-router-dom";
+import { ButtonReturn } from "../../components/ButtonReturn";
 
 export const UserConfig = () => {
   const { selected, setSelected } = useContext(ConfigContext);
@@ -18,7 +19,7 @@ export const UserConfig = () => {
     <UserConfigStyles>
       <body>
         <header>
-          <button>ir para lista</button>
+          <ButtonReturn />
         </header>
         <div className="container">
           <div className="iconContainer">

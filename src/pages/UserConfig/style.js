@@ -50,7 +50,7 @@ export const UserConfigStyles = styled.div`
   }
 
   .configsContainer {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: left;
     padding-left: 30px;
   }
@@ -60,7 +60,7 @@ export const UserConfigStyles = styled.div`
   }
 
   .configsContainer h2 {
-    font-size: 18px;
+    font-size: 17.5px;
     font-weight: lighter;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -71,10 +71,12 @@ export const UserConfigStyles = styled.div`
 
     border-style: none;
     margin-right: 10px;
-    width: fit-content;
+    margin-bottom: 10px;
+    width: 60px;
     height: 30px;
     padding: 5px;
     border-radius: 10px;
+    font-size: 18px;
   }
 
   .payment {
@@ -86,7 +88,7 @@ export const UserConfigStyles = styled.div`
   }
 
   .payment img {
-    width: 80px;
+    width: 60px;
   }
 
   .configsContainer button:active {
@@ -97,18 +99,28 @@ export const UserConfigStyles = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
-    align-items: center;
   }
 
   .toCartEnd a {
-    font-weight: bold;
-    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    background-color: red;
-    width: 90%;
-    height: 80px;
+
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(244, 67, 53, 1);
+    color: #fff;
+    width: 85%;
+    height: 50px;
+    font-size: 18px;
+    font-weight: bolder;
+  }
+
+  @media screen and (min-width: 800px) {
+    .toCartEnd a {
+      margin-top: 20px;
+      width: 50%;
+    }
   }
 `;

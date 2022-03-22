@@ -14,15 +14,19 @@ export const ConfigProvider = ({ children }) => {
   });
 
   const user = JSON.parse(localStorage.getItem("@IdUser"));
+  console.log(user);
+  const token = JSON.parse(localStorage.getItem("@Token"));
+  console.log(token);
 
   const getUser = () => {
-    Api.get("/users/1")
+    Api.get(`/users/${user}`, { headers: { Authorization: `Bearer ${token}` } })
       .then((response) => {
         console.log(response);
         localStorage.setItem("@UserName", JSON.stringify(response.data));
       })
       .catch((_) => {
-        toast.error("deu ruim mlkada");
+        console.log(_);
+        toast.error("erro na requisição da api do config provider");
       });
   };
 
