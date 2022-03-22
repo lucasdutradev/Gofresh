@@ -2,15 +2,27 @@ import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { CartEndStyles } from "./style";
 
-export const CartEnd = ({ day, people }) => {
-  const [userInput, setUserInput] = useState({ hours: "", days: "" });
+export const CartEnd = () => {
+  const [userInput, setUserInput] = useState({ hours: "", days: 0 });
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
-  const receivingDays = ["segunda", "quarta", "sábado"];
+  const eatingDays = [1, 2, 3, 4, 5, 6, 7];
 
+  const calculator = () => {
+    return 15 * infoMeal * 2 * parseInt(userInput.days);
+  };
+  let info = JSON.parse(localStorage.getItem("@Info"));
+  console.log(info);
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
   }
 
+  if (!localStorage.getItem("@InfoDay")) {
+    return <Redirect to="/configuration" />;
+  }
+
+  const infoDay = JSON.parse(localStorage.getItem("@InfoDay"));
+  const infoMeal = JSON.parse(localStorage.getItem("@InfoMeal"));
+  console.log(infoMeal);
   return (
     <CartEndStyles>
       <body>
@@ -19,7 +31,7 @@ export const CartEnd = ({ day, people }) => {
         </header>
         <div className="container">
           <h1>Finalizar</h1>
-          <p>{`Dia de recebimento:${day}`}</p>
+          <p>{`Dia de recebimento:${infoDay}`}</p>
           <p>
             Horário de recebimento:
             <select
@@ -35,19 +47,20 @@ export const CartEnd = ({ day, people }) => {
               ))}
             </select>
           </p>
-          <p>{`Pessoas por refeição:${people}`}</p>
+          <p>{`Pessoas por refeição:${infoMeal}`}</p>
           <p>
             Refeições para quantos dias?
             <select
               className="Select"
               onChange={(event) =>
-                setUserInput({ ...userInput, days: event.target.value })
+                setUserInput({
+                  ...userInput,
+                  days: parseInt(event.target.value),
+                })
               }
             >
-              {receivingDays.map((e, i) => (
-                <option key={i} value="days">
-                  {e}
-                </option>
+              {eatingDays.map((e, i) => (
+                <option key={i}>{e}</option>
               ))}
             </select>
           </p>
@@ -57,7 +70,9 @@ export const CartEnd = ({ day, people }) => {
             <input placeholder="Digite o código de convite"></input>
           </div>
 
-          {/* <h3>Total: R$ {15 * people * 2 * day},00</h3> */}
+          <h3>Total: R$ {calculator()},00</h3>
+
+          {/* <h4>Desconto: </h4> */}
           <div className="containerButton">
             <button>PAGAR</button>
           </div>

@@ -85,7 +85,30 @@ export const UserConfigStyles = styled.div`
     width: fit-content;
   }
 
+  .payment img {
+    width: 80px;
+  }
+
   .configsContainer button:active {
     background-color: red;
+  }
+
+  .toCartEnd {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .toCartEnd a {
+    font-weight: bold;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: red;
+    width: 90%;
+    height: 80px;
   }
 `;
