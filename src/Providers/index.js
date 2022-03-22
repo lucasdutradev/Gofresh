@@ -5,22 +5,25 @@ import { CountPageProvider } from "./countPage";
 import { CartProvider } from "./cart";
 import { ChangeCategoryProvider } from "./changeCategory";
 import { ConfigProvider } from "./userConfig";
+import { CartEndProvider } from "./cartEnd";
 
 const Provider = ({ children }) => {
   return (
-    <ChangeCategoryProvider>
-      <ConfigProvider>
-        <CartProvider>
-          <ListProvider>
-            <CountPageProvider>
-              <RegisterProvider>
-                <LoginProvider>{children}</LoginProvider>
-              </RegisterProvider>
-            </CountPageProvider>
-          </ListProvider>
-        </CartProvider>
-      </ConfigProvider>
-    </ChangeCategoryProvider>
+    <CartEndProvider>
+      <ChangeCategoryProvider>
+        <ConfigProvider>
+          <CartProvider>
+            <ListProvider>
+              <CountPageProvider>
+                <RegisterProvider>
+                  <LoginProvider>{children}</LoginProvider>
+                </RegisterProvider>
+              </CountPageProvider>
+            </ListProvider>
+          </CartProvider>
+        </ConfigProvider>
+      </ChangeCategoryProvider>
+    </CartEndProvider>
   );
 };
 
