@@ -4,6 +4,7 @@ import { CartEnd } from "../pages/CartEnd";
 import Home from "../pages/Home";
 import LoginPage from "../pages/Login";
 import Menu from "../pages/Menu";
+import { OrderDetails } from "../pages/OrderDetails";
 import PageNotFound from "../pages/PageNotFound";
 import RegisterPage from "../pages/Register";
 import Cart from "../pages/Cart";
@@ -29,6 +30,7 @@ const DefaultRoutes = () => {
       <Route path="/configuration" component={() => <UserConfig />} />
       <Route path="/cartend" component={() => <CartEnd />} />
       <Route path="/cart" component={() => <Cart />} />
+      <Route path="/orderdetails" component={() => <OrderDetails />} />
       <Route exact path="*" component={() => <PageNotFound />} />
     </Switch>
   );

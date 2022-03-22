@@ -2,7 +2,7 @@ import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-
+import { useHistory } from "react-router-dom/";
 const Cart = ({ data }) => {
   const { cart, pushProduct } = useContext(CartContext);
   console.log(cart);
