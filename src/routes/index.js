@@ -11,27 +11,27 @@ import { UserConfig } from "../pages/UserConfig";
 import { LoginContext } from "../Providers/postLogin";
 
 const DefaultRoutes = () => {
-    const { isLogin, setIsLogin } = useContext(LoginContext);
-    console.log(isLogin);
-    useEffect(() => {
-        const token = JSON.parse(localStorage.getItem("@Token"));
-        if (token) {
-            setIsLogin(true);
-        }
-    }, [isLogin, setIsLogin]);
+  const { isLogin, setIsLogin } = useContext(LoginContext);
+  console.log(isLogin);
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("@Token"));
+    if (token) {
+      setIsLogin(true);
+    }
+  }, [isLogin, setIsLogin]);
 
-    return (
-        <Switch>
-            <Route exact path="/" component={() => <Home />} />
-            <Route path="/menu" component={() => <Menu />} />
-            <Route path="/login" component={() => <LoginPage />} />
-            <Route path="/register" component={() => <RegisterPage />} />
-            <Route path="/configuration" component={() => <UserConfig />} />
-            <Route path="/cartend" component={() => <CartEnd />} />
-            <Route path="/cart" component={() => <Cart />} />
-            <Route exact path="*" component={() => <PageNotFound />} />
-        </Switch>
-    );
+  return (
+    <Switch>
+      <Route exact path="/" component={() => <Home />} />
+      <Route path="/menu" component={() => <Menu />} />
+      <Route path="/login" component={() => <LoginPage />} />
+      <Route path="/register" component={() => <RegisterPage />} />
+      <Route path="/configuration" component={() => <UserConfig />} />
+      <Route path="/cartend" component={() => <CartEnd />} />
+      <Route path="/cart" component={() => <Cart />} />
+      <Route exact path="*" component={() => <PageNotFound />} />
+    </Switch>
+  );
 };
 
 export default DefaultRoutes;
