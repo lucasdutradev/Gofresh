@@ -1,10 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
-export const DefaultStyles = createGlobalStyle`
+export default createGlobalStyle`
     *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+    }
+    html {
+        width: 100%;
+            height: 100%;
+        #root {
+            width: 100%;
+            height: 100%;
+        }
     }
     
     h3{
@@ -17,6 +25,14 @@ export const DefaultStyles = createGlobalStyle`
         font-family: 'Inter', sans-serif;
     }
 
+    :root {
+        --white: #FFFFFF;
+        --red: #F44335;
+        --green: #1F3000;
+        --gray: #333333;
+        --lima: #CFDF6E;
+    }
+    
     button{
         cursor: pointer;
     }

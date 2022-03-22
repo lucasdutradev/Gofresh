@@ -1,8 +1,10 @@
 import { useContext, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { CartEnd } from "../pages/CartEnd";
+import Home from "../pages/Home";
 import LoginPage from "../pages/Login";
 import Menu from "../pages/Menu";
+import { OrderDetails } from "../pages/OrderDetails";
 import PageNotFound from "../pages/PageNotFound";
 import RegisterPage from "../pages/Register";
 import Cart from "../pages/Cart";
@@ -21,27 +23,15 @@ const DefaultRoutes = () => {
 
   return (
     <Switch>
-      <Route exact path="/menu">
-        <Menu />
-      </Route>
-      <Route exact path="/login">
-        <LoginPage />
-      </Route>
-      <Route exact path="/register">
-        <RegisterPage />
-      </Route>
-      <Route exact path="/configuration">
-        <UserConfig />
-      </Route>
-      <Route exact path="/cartEnd">
-        <CartEnd />
-      </Route>
-      <Route exact path="/cart">
-        <Cart />
-      </Route>
-      <Route path="*">
-        <PageNotFound />
-      </Route>
+      <Route exact path="/" component={() => <Home />} />
+      <Route path="/menu" component={() => <Menu />} />
+      <Route path="/login" component={() => <LoginPage />} />
+      <Route path="/register" component={() => <RegisterPage />} />
+      <Route path="/configuration" component={() => <UserConfig />} />
+      <Route path="/cartend" component={() => <CartEnd />} />
+      <Route path="/cart" component={() => <Cart />} />
+      <Route path="/orderdetails" component={() => <OrderDetails />} />
+      <Route exact path="*" component={() => <PageNotFound />} />
     </Switch>
   );
 };

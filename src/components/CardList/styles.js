@@ -49,3 +49,23 @@ export const DescriptionCard = styled.p`
   letter-spacing: 0.01em;
   color: rgba(0, 0, 0, 0.8);
 `;
+
+export const ContainerTitleRatingButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const ContainerTitleRating = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ButtonAdd = styled.div`
+  width: 21px;
+  height: 14px;
+  background: #f44335;
+  border-radius: 3px;
+  text-align: center;
+`;
