@@ -68,35 +68,50 @@ export const Section4 = styled.section`
   align-items: center;
   justify-content: center;
   color: rgba(31, 48, 0, 0.8);
-  p {
-    margin: 45px;
+
+  @media (min-width: 769px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+  }
+`;
+export const Div1 = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  button {
   }
   span {
     margin: 1px;
     color: rgba(31, 48, 0, 0.5);
   }
-  div1 {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
-  }
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    background-color: #f44335;
-  }
-  @media (min-width: 769px) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+`;
+export const Div2 = styled.div`
+  p {
     margin: 50px;
   }
+`;
+export const ButtonRed = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #f44335;
+`;
+export const ButtonGray = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #c4c4c4;
 `;
 
 export const Section5 = styled.section`

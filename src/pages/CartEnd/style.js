@@ -17,16 +17,8 @@ export const CartEndStyles = styled.div`
     border-radius: 0 0 35px 35px;
   }
 
-  header button {
-    height: 35px;
-    width: 94px;
-    border-style: none;
-    background-color: rgba(207, 223, 110, 1);
-    color: white;
-    border-radius: 12px;
-  }
-
   h1 {
+    margin-top: 20px;
     font-size: 52px;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -90,5 +82,28 @@ export const CartEndStyles = styled.div`
     display: flex;
     width: 100vw;
     justify-content: center;
+  }
+
+  @media screen and (min-width: 800px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container1 {
+      width: 33%;
+    }
+    .container Button {
+      margin-top: 20px;
+      width: 20%;
+      margin-right: auto;
+    }
+    .containerButton {
+      margin-left: 30px;
+    }
+    .container input {
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
   }
 `;
