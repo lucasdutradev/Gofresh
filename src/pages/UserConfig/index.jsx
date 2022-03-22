@@ -15,7 +15,7 @@ export const UserConfig = () => {
 
   return (
     <UserConfigStyles>
-      <body>
+      <>
         <header>
           <ButtonReturn />
         </header>
@@ -33,7 +33,7 @@ export const UserConfig = () => {
         <p className="toCartEnd">
           <Link to="/cartEnd">Finalizar</Link>
         </p>
-      </body>
+      </>
     </UserConfigStyles>
   );
 };

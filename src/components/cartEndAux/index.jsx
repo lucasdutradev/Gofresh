@@ -13,7 +13,7 @@ export const CartEndAux = () => {
   let width = window.screen.width;
 
   return (
-    <body>
+    <>
       <h1>Finalizar</h1>
       <div className="container">
         <div className="container1">
@@ -69,6 +69,6 @@ export const CartEndAux = () => {
           </div>
         )}
       </div>
-    </body>
+    </>
   );
 };

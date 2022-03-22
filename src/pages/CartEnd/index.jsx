@@ -10,12 +10,12 @@ export const CartEnd = () => {
 
   return (
     <CartEndStyles>
-      <body>
+      <>
         <header>
           <ButtonReturn />
         </header>
         <CartEndAux />
-      </body>
+      </>
     </CartEndStyles>
   );
 };
