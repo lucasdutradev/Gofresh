@@ -2,13 +2,12 @@ import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 const Cart = ({ data }) => {
-  const { cart } = useContext(CartContext);
-
-  console.log(cart);
+  const { cart, pushProduct } = useContext(CartContext);
   const history = useHistory();
+
   return (
     <ContainerCart>
       <div className="containerBody">
@@ -18,13 +17,13 @@ const Cart = ({ data }) => {
         <div className="containerCart">
           <h1>Carrinho</h1>
           {cart.map((data) => (
-            <CardList data={data} />
+            <CardList negative data={data} />
           ))}
           <div className="containerCartButton">
             {cart.length === 0 ? (
-              <span>Carinho vazio, adicione produtos!</span>
+              <span>Você ainda não possui pratos adicionados ao carrinho!</span>
             ) : (
-              <button>Finalizar</button>
+              <button onClick={() => pushProduct()}>Finalizar</button>
             )}
           </div>
         </div>
