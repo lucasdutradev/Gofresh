@@ -6,6 +6,7 @@ import LoginPage from "../pages/Login";
 import Menu from "../pages/Menu";
 import PageNotFound from "../pages/PageNotFound";
 import RegisterPage from "../pages/Register";
+import Cart from "../pages/Cart";
 import { UserConfig } from "../pages/UserConfig";
 import { LoginContext } from "../Providers/postLogin";
 
@@ -27,6 +28,7 @@ const DefaultRoutes = () => {
             <Route path="/register" component={() => <RegisterPage />} />
             <Route path="/configuration" component={() => <UserConfig />} />
             <Route path="/cartEnd" component={() => <CartEnd />} />
+            <Route path="/cart" component={() => <Cart />} />
             <Route exact path="*" component={() => <PageNotFound />} />
         </Switch>
     );
