@@ -1,15 +1,19 @@
 import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
-import { useState, useHistory } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../Providers/cart";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Cart = ({ data }) => {
-  const [cart, setCart] = useState([]);
+  const { cart } = useContext(CartContext);
+
+  console.log(cart);
   const history = useHistory();
   return (
     <ContainerCart>
       <div className="containerBody">
         <div className="containerHeader">
-          <button>ir para lista</button>
+          <button onClick={() => history.push("/menu")}>ir para lista</button>
         </div>
         <div className="containerCart">
           <h1>Carrinho</h1>
@@ -17,7 +21,11 @@ const Cart = ({ data }) => {
             <CardList data={data} />
           ))}
           <div className="containerCartButton">
-            <button>Finalizar</button>
+            {cart.length === 0 ? (
+              <span>Carinho vazio, adicione produtos!</span>
+            ) : (
+              <button>Finalizar</button>
+            )}
           </div>
         </div>
       </div>
