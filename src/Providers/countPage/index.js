@@ -7,7 +7,6 @@ export const CountPageContext = createContext([]);
 export const CountPageProvider = ({ children }) => {
   const [sliceList, setSliceList] = useState([]);
   const [countPage, setCountPage] = useState(1);
-  const [finalList, setFinalList] = useState([]);
   const { list, searchList } = useContext(ListContext);
 
   const getList = () => {
@@ -39,8 +38,6 @@ export const CountPageProvider = ({ children }) => {
         countPage,
         sliceList,
         setSliceList,
-        finalList,
-        setFinalList,
         setCountPage,
       }}
     >

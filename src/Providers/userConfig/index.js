@@ -11,6 +11,7 @@ export const ConfigProvider = ({ children }) => {
     idMeal: "",
     activeMeal: false,
   });
+
   const [userInfo, setUserInfo] = useState([]);
 
   const userId = JSON.parse(localStorage.getItem("@IdUser"));
@@ -23,10 +24,12 @@ export const ConfigProvider = ({ children }) => {
       .then((response) => {
         setUserInfo(response.data);
       })
-      .catch((_) => {});
+      .catch((err) => console.log(err));
   };
 
-  useEffect(() => getUser(), []);
+  useEffect(() => {
+    getUser();
+  }, []);
 
   return (
     <ConfigContext.Provider

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { CartEndContext } from "../../Providers/cartEnd";
 import { days, people, cards } from "../configAux";
+import { ConfigsContains } from "./style";
 
 export const ConfigsContainer = () => {
   const { selected, setSelected } = useContext(ConfigContext);
@@ -38,8 +39,8 @@ export const ConfigsContainer = () => {
   };
 
   return (
-    <div className="configsContainer">
-      <p>configurações</p>
+    <ConfigsContains>
+      <h3>configurações</h3>
       <h2>Selecione o dia de recebimento:</h2>
       <div className="mapContainer">
         {days.map((day, i) => (
@@ -65,6 +66,6 @@ export const ConfigsContainer = () => {
           </button>
         ))}
       </div>
-    </div>
+    </ConfigsContains>
   );
 };

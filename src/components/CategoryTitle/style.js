@@ -12,17 +12,15 @@ export const ContainerCategoryTitle = styled.div`
 `;
 
 export const ButtonTittle = styled.h3`
+  cursor: pointer;
+  padding: 0 30px;
   font-family: "Inter";
   font-style: italic;
   font-weight: 400;
   text-align: center;
   color: rgba(0, 0, 0, 0.8);
-  margin-left: 10vw;
-  margin-right: 10vw;
-  margin-bottom: 3vh;
-  width: 4vw;
-  font-size: 3.5vw;
+  font-size: 10px;
   @media screen and (min-width: 700px) {
-    font-size: 3vh;
+    font-size: 16px;
   }
 `;
