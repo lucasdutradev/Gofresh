@@ -2,36 +2,37 @@ import { Redirect } from "react-router-dom";
 import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
-import { useState } from "react";
-import { ConfigsContainer } from "../../components/configAux";
-import { Link } from "react-router-dom";
-import { ButtonReturn } from "../../components/ButtonReturn";
+import { ConfigsContainer } from "../../components/configHandler";
+import { HeaderB } from "../../components/HeaderB";
+import { useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const UserConfig = () => {
-  const { selected, setSelected } = useContext(ConfigContext);
-  const user = JSON.parse(localStorage.getItem("@UserName"));
-
+  const history = useHistory();
+  const { selected, userInfo } = useContext(ConfigContext);
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
   }
 
+  const handleSubmit = () => {
+    selected.activeDay & selected.activeMeal
+      ? history.push("/cartEnd")
+      : toast.error("Selecione as opções.");
+  };
+
   return (
     <UserConfigStyles>
-      <body>
-        <header>
-          <ButtonReturn />
-        </header>
-        <div className="container">
-          <div className="iconContainer">
-            <div className="icon">{user}</div>
-          </div>
-          <h1>{user}</h1>
-          <ConfigsContainer />
+      <HeaderB />
+      <div className="container">
+        <div className="iconContainer">
+          {userInfo.name && <div className="icon">{userInfo.name[0]}</div>}
         </div>
-        <p className="toCartEnd">
-          <Link to="/cartEnd">Finalizar</Link>
-        </p>
-      </body>
+        <h1>{userInfo.name}</h1>
+        <ConfigsContainer />
+        <button onClick={handleSubmit} className="toCartEnd">
+          Salvar configurações
+        </button>
+      </div>
     </UserConfigStyles>
   );
 };

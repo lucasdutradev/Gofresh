@@ -6,29 +6,32 @@ import { HeaderProvider } from "./header";
 import { CartProvider } from "./cart";
 import { ChangeCategoryProvider } from "./changeCategory";
 import { ConfigProvider } from "./userConfig";
+import { CartEndProvider } from "./cartEnd";
 import { HomeProvider } from "./home";
 
 const Provider = ({ children }) => {
     return (
-        <ChangeCategoryProvider>
-            <HomeProvider>
+        <CartEndProvider>
+            <ChangeCategoryProvider>
                 <ConfigProvider>
-                    <CartProvider>
-                        <ListProvider>
-                            <CountPageProvider>
-                                <HeaderProvider>
-                                    <RegisterProvider>
-                                        <LoginProvider>
-                                            {children}
-                                        </LoginProvider>
-                                    </RegisterProvider>
-                                </HeaderProvider>
-                            </CountPageProvider>
-                        </ListProvider>
-                    </CartProvider>
+                    <HomeProvider>
+                        <CartProvider>
+                            <ListProvider>
+                                <CountPageProvider>
+                                    <HeaderProvider>
+                                        <RegisterProvider>
+                                            <LoginProvider>
+                                                {children}
+                                            </LoginProvider>
+                                        </RegisterProvider>
+                                    </HeaderProvider>
+                                </CountPageProvider>
+                            </ListProvider>
+                        </CartProvider>
+                    </HomeProvider>
                 </ConfigProvider>
-            </HomeProvider>
-        </ChangeCategoryProvider>
+            </ChangeCategoryProvider>
+        </CartEndProvider>
     );
 };
 

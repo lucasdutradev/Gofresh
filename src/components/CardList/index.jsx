@@ -13,13 +13,9 @@ import {
 import { CartContext } from "../../Providers/cart";
 import { useContext } from "react";
 
-const CardList = ({ data }) => {
+const CardList = ({ data, negative }) => {
   const rating = data.note;
-  const { addToCart } = useContext(CartContext);
-
-  const HandleClickAdd = (item) => {
-    addToCart(item);
-  };
+  const { addToCart, removeFromCart } = useContext(CartContext);
 
   return (
     <ContainerCardList>
@@ -34,7 +30,11 @@ const CardList = ({ data }) => {
             </RatingStar>
             <TitleName>{data.name}</TitleName>
           </ContainerTitleRating>
-          <ButtonAdd onClick={() => HandleClickAdd(data)}>+</ButtonAdd>
+          {negative ? (
+            <ButtonAdd onClick={() => removeFromCart(data)}>-</ButtonAdd>
+          ) : (
+            <ButtonAdd onClick={() => addToCart(data)}>+</ButtonAdd>
+          )}
         </ContainerTitleRatingButton>
         <DescriptionCard>{data.description}</DescriptionCard>
       </ContainerInformation>

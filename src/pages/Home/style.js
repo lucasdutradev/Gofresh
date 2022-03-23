@@ -13,7 +13,7 @@ export const SectionHome = styled.section`
 
 export const DivBanner = styled.div`
     width: 100%;
-    max-width: 1600px;
+    max-width: 1920px;
     min-height: 250px;
     background-image: url(${Banner});
     background-position: bottom;
@@ -49,6 +49,7 @@ export const DivBanner = styled.div`
 
 export const SectionOurTeam = styled.section`
     width: 100%;
+    max-width: 1920px;
     min-height: 330px;
     display: flex;
     align-items: center;
@@ -170,7 +171,7 @@ export const SectionOurTeam = styled.section`
 
 export const SectionFoods = styled.section`
     width: 100%;
-    max-width: 1600px;
+    max-width: 1920px;
     min-height: 200px;
     display: flex;
     justify-content: center;
