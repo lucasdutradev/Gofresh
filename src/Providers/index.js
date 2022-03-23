@@ -7,6 +7,8 @@ import { CartProvider } from "./cart";
 import { ChangeCategoryProvider } from "./changeCategory";
 import { ConfigProvider } from "./userConfig";
 import { CartEndProvider } from "./cartEnd";
+import { CardFavoriteProvider } from "./cardFavorite";
+import { CardNewsProvider } from "./cardNews";
 
 const Provider = ({ children }) => {
   return (
@@ -15,13 +17,17 @@ const Provider = ({ children }) => {
         <ConfigProvider>
           <CartProvider>
             <ListProvider>
-              <CountPageProvider>
-                <HeaderProvider>
-                  <RegisterProvider>
-                    <LoginProvider>{children}</LoginProvider>
-                  </RegisterProvider>
-                </HeaderProvider>
-              </CountPageProvider>
+              <CardNewsProvider>
+                <CardFavoriteProvider>
+                  <CountPageProvider>
+                    <HeaderProvider>
+                      <RegisterProvider>
+                        <LoginProvider>{children}</LoginProvider>
+                      </RegisterProvider>
+                    </HeaderProvider>
+                  </CountPageProvider>
+                </CardFavoriteProvider>
+              </CardNewsProvider>
             </ListProvider>
           </CartProvider>
         </ConfigProvider>
