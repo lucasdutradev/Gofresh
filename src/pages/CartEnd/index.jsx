@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Redirect } from "react-router-dom";
 import { CartEndStyles } from "./style";
 import { CartEndAux } from "../../components/cartEndAux";
 import { ButtonReturn } from "../../components/ButtonReturn";
+import { HeaderB } from "../../components/HeaderB";
 
 export const CartEnd = () => {
   if (!localStorage.getItem("@Token")) {
@@ -11,12 +11,10 @@ export const CartEnd = () => {
 
   return (
     <CartEndStyles>
-      <body>
-        <header>
-          <ButtonReturn />
-        </header>
+      <>
+        <HeaderB />
         <CartEndAux />
-      </body>
+      </>
     </CartEndStyles>
   );
 };

@@ -4,7 +4,7 @@ import { BtnReturn } from "./style";
 export const ButtonReturn = () => {
   return (
     <BtnReturn>
-      <Link to="/menu">voltar ao menu</Link>
+      <Link to="/menu"> &lt; Ir ao menu</Link>
     </BtnReturn>
   );
 };

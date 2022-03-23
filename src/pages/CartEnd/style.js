@@ -8,15 +8,6 @@ export const CartEndStyles = styled.div`
     padding: 0;
   }
 
-  header {
-    height: 115px;
-    text-align: left;
-    padding-top: 20px;
-    padding-left: 20px;
-    background-color: rgba(238, 238, 238, 1);
-    border-radius: 0 0 35px 35px;
-  }
-
   h1 {
     margin-top: 20px;
     font-size: 52px;
@@ -27,7 +18,6 @@ export const CartEndStyles = styled.div`
 
   p {
     text-align: left;
-    padding-left: 30px;
   }
 
   p select {
@@ -43,14 +33,12 @@ export const CartEndStyles = styled.div`
     text-align: left;
     font-size: 17px;
     color: grey;
-    padding-left: 30px;
   }
 
   h3 {
     text-align: left;
     font-size: 32px;
     color: grey;
-    padding-left: 30px;
   }
 
   .container button {
@@ -60,15 +48,15 @@ export const CartEndStyles = styled.div`
     border-radius: 5px;
     background-color: rgba(244, 67, 53, 1);
     color: #fff;
-    width: 85%;
     height: 50px;
+    width: 100%;
     font-size: 18px;
     font-weight: bolder;
   }
 
   .container input {
     margin-top: 15px;
-    margin-left: 30px;
+    margin-bottom: 15px;
     height: 35px;
     border: 2px solid black;
     border-radius: 8px;
@@ -80,7 +68,8 @@ export const CartEndStyles = styled.div`
 
   .containerButton {
     display: flex;
-    width: 100vw;
+    margin-left: -12px;
+    width: 100%;
     justify-content: center;
   }
 
@@ -91,16 +80,14 @@ export const CartEndStyles = styled.div`
     }
 
     .container1 {
-      width: 33%;
+      width: 30%;
     }
-    .container Button {
+    .container1 Button {
       margin-top: 20px;
-      width: 20%;
+      width: 100%;
       margin-right: auto;
     }
-    .containerButton {
-      margin-left: 30px;
-    }
+
     .container input {
       margin-bottom: 15px;
       margin-top: 20px;

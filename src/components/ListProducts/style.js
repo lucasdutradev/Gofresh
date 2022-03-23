@@ -3,44 +3,43 @@ import styled from "styled-components";
 export const ContainerListProducts = styled.div`
   display: flex;
   flex-direction: column;
-  margin: o auto;
+  align-items: center;
+  margin: 30px auto;
 `;
 
 export const ContainerTitleCardapio = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
-  margin-bottom: 10px;
-  margin-left: 100px;
+  align-items: flex-start;
+  width: 90%;
+  margin: 30px 0;
+  @media screen and (min-width: 768px) {
+    width: 67%;
+  }
 `;
 
 export const TitleCardapio = styled.h2`
-  width: 109px;
-  height: 27px;
   font-family: "Comic Neue";
   font-style: italic;
   font-weight: 400;
-  font-size: 24px;
-  line-height: 28px;
+  font-size: 18px;
   color: rgba(0, 0, 0, 0.8);
 `;
 
 export const SubTitleCardapio = styled.h1`
-  width: 413px;
-  height: 42px;
-  font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 36px;
-  line-height: 44px;
+  font-size: 29px;
   color: #1f3000;
 `;
 
 export const ContainerCardListMap = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  margin-bottom: 15px;
 `;
 
 export const ContainerPageSelector = styled.div`
@@ -52,22 +51,18 @@ export const ContainerPageSelector = styled.div`
 
 export const ButtonPage = styled.button`
   height: 0px;
-  left: 691px;
-  top: 1182px;
   border: transparent;
   box-sizing: border-box;
   font-family: "Comic Neue";
   font-style: italic;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 29px;
   line-height: 28px;
 `;
 
 export const NumberPage = styled.p`
   width: 10px;
   height: 28px;
-  left: 716px;
-  top: 1168px;
   font-family: "Comic Neue";
   font-style: italic;
   font-weight: 700;

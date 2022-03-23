@@ -15,7 +15,6 @@ export const LoginProvider = ({ children }) => {
           JSON.stringify(response.data.accessToken)
         );
         localStorage.setItem("@IdUser", JSON.stringify(response.data.user.id));
-        console.log(response.data.user.id);
         setIsLogin(true);
       })
       .catch((_) => {

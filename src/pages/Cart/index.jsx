@@ -2,28 +2,37 @@ import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { useHistory } from "react-router";
-
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 const Cart = ({ data }) => {
-  // const [cart, setCart] = useState([]);
-  const { cart } = useContext(CartContext);
+  const { cart, pushProduct } = useContext(CartContext);
   const history = useHistory();
-
+  const handleSubmit = () => {
+    if (localStorage.getItem("@Token")) {
+      pushProduct();
+      history.push("/cartend");
+    } else {
+      history.push("/login");
+    }
+  };
   return (
     <ContainerCart>
-      {console.log(cart)}
-      <div className="containerBody">
-        <div className="containerHeader">
-          <button>ir para lista</button>
-        </div>
-        <div className="containerCart">
-          <h1>Carrinho</h1>
-          {cart.map((data) => (
-            <CardList data={data} />
-          ))}
-          <div className="containerCartButton">
-            <button>Finalizar</button>
-          </div>
+      <div className="containerHeader">
+        <Link to="/menu">
+          <button>&lt; ir ao menu</button>
+        </Link>
+      </div>
+      <h1>Carrinho</h1>
+      <div className="containerCart">
+        {cart.map((data, index) => (
+          <CardList key={index} negative data={data} />
+        ))}
+        <div className="containerCartButton">
+          {cart.length === 0 ? (
+            <span>Você ainda não possui pratos adicionados ao carrinho!</span>
+          ) : (
+            <button onClick={handleSubmit}>Finalizar</button>
+          )}
         </div>
       </div>
     </ContainerCart>

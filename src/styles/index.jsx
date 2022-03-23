@@ -29,8 +29,10 @@ export default createGlobalStyle`
         --white: #FFFFFF;
         --red: #F44335;
         --green: #1F3000;
+        --white-gray: #EEEEEE;
         --gray: #333333;
         --lima: #CFDF6E;
+        --black: #000;
     }
     
     button{

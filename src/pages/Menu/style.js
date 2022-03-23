@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const ContainerMenu = styled.div`
-  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 30px;
 `;
 
 export const BarSeparation = styled.div`
-  width: 500px;
-  height: 0px;
-  border: 1px solid #000000;
+  width: 100%;
+  max-width: 500px;
+  height: 1px;
+  background-color: #000;
   margin-bottom: 24px;
 `;
