@@ -11,7 +11,13 @@ export const CartEndAux = () => {
     let total =
       15 * parseInt(userInput.infoMeal) * 2 * parseInt(userInput.days);
     console.log(total);
-    setUserInput({ ...userInput, total: total });
+    setUserInput({
+      ...userInput,
+      total: total.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      }),
+    });
     return total;
   };
 

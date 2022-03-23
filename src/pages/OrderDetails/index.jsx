@@ -53,7 +53,7 @@ export const OrderDetails = () => {
             Numero de ref.: <span>#24658</span>
           </p>
           <p>
-            Total: <span>R$250,00</span>
+            Total: <span>{userInput.total}</span>
           </p>
         </Section2>
 

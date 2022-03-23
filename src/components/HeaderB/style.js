@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const HeaderBStyle = styled.div`
-  height: 115px;
-  text-align: left;
-  padding-top: 20px;
-  padding-left: 20px;
-  background-color: rgba(238, 238, 238, 1);
-  border-radius: 0 0 35px 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 85px;
+  background-color: #eeeeee;
+  border-radius: 0 0 30px 30px;
 `;
