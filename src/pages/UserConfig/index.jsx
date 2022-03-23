@@ -9,9 +9,7 @@ import { toast } from "react-toastify";
 
 export const UserConfig = () => {
   const history = useHistory();
-
-  const { selected, setSelected, userInfo } = useContext(ConfigContext);
-  console.log(selected);
+  const { selected, userInfo } = useContext(ConfigContext);
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
   }
@@ -24,23 +22,19 @@ export const UserConfig = () => {
 
   return (
     <UserConfigStyles>
-      <>
-        <HeaderB />
-
-        {userInfo.name && (
-          <div className="container">
-            <div className="iconContainer">
-              <div className="icon">{userInfo.name[0]}</div>
-            </div>
-            <h1>{userInfo.name}</h1>
-            <ConfigsContainer />
-          </div>
-        )}
-
+      <HeaderB />
+      <div className="container">
+        <div className="iconContainer">
+          {userInfo.name !== undefined && (
+            <div className="icon">{userInfo.name[0]}</div>
+          )}
+        </div>
+        <h1>{userInfo.name}</h1>
+        <ConfigsContainer />
         <button onClick={handleSubmit} className="toCartEnd">
-          Finalizar
+          Salvar configurações
         </button>
-      </>
+      </div>
     </UserConfigStyles>
   );
 };

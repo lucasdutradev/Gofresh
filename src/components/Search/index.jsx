@@ -16,20 +16,18 @@ const Search = () => {
 
   const showProducts = (data) => {
     data = data.toLowerCase();
+    setCountPage(1);
     if (data.length === 0) {
       setSearchList([]);
-      setCountPage(1);
     } else {
-      setCountPage(1);
       setSearchList(
-        list.filter((item) => {
-          return (
+        list.filter(
+          (item) =>
             item.category.toLowerCase().includes(data) ||
             item.name.toLowerCase().includes(data) ||
             item.description.toLowerCase().includes(data) ||
             item.ingredients.map((str) => str.toLowerCase()).includes(data)
-          );
-        })
+        )
       );
     }
   };
