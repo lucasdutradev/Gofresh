@@ -20,12 +20,17 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
+import { ConfigContext } from "../../Providers/userConfig";
+import { CartEndContext } from "../../Providers/cartEnd";
+
 export const OrderDetails = () => {
   const history = useHistory();
 
   const [change, setChange] = useState(true);
 
   const { cart } = useContext(CartContext);
+  const { selected } = useContext(ConfigContext);
+  const { userInput } = useContext(CartEndContext);
 
   if (!localStorage.getItem("@Token")) {
     return <Redirect to="/login" />;
@@ -42,7 +47,7 @@ export const OrderDetails = () => {
         </Section1>
         <Section2>
           <p>
-            Entrega do pedido: <span>Segunda-feira</span>
+            Entrega do pedido: <span>{console.log(selected.idDays)}</span>
           </p>
           <p>
             Numero de ref.: <span>#24658</span>
@@ -94,7 +99,10 @@ export const OrderDetails = () => {
         ) : (
           <Section6>
             <div>
-              <p>Refeição suficiente para X dias e X pessoas.</p>
+              <p>
+                Refeição suficiente para {userInput.days} dias e{" "}
+                {selected.idMeal} pessoas.
+              </p>
               {cart.map((item) => {
                 return <span>{item.name} </span>;
               })}{" "}
