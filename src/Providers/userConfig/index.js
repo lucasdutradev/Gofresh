@@ -23,6 +23,7 @@ export const ConfigProvider = ({ children }) => {
     })
       .then((response) => {
         setUserInfo(response.data);
+        console.log(response.data);
       })
       .catch((err) => console.log(err));
   };

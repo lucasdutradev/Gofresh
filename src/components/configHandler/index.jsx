@@ -13,7 +13,7 @@ export const ConfigsContainer = () => {
 
     if (selected.activeDay) {
       let lastSelected = document.getElementById(selected.idDay);
-      lastSelected.style.backgroundColor = "rgba(238, 238, 238, 1)";
+      lastSelected.style.backgroundColor = "#ccc";
       lastSelected.style.color = "black";
     }
     setSelected({ ...selected, idDay: e, activeDay: true });
@@ -28,7 +28,7 @@ export const ConfigsContainer = () => {
 
     if (selected.activeMeal) {
       let lastSelected = document.getElementById(selected.idMeal);
-      lastSelected.style.backgroundColor = "rgba(238, 238, 238, 1)";
+      lastSelected.style.backgroundColor = "#ccc";
       lastSelected.style.color = "black";
     }
     setSelected({ ...selected, idMeal: e, activeMeal: true });
