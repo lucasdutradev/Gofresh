@@ -25,9 +25,7 @@ export const UserConfig = () => {
       <HeaderB />
       <div className="container">
         <div className="iconContainer">
-          {userInfo.name !== undefined && (
-            <div className="icon">{userInfo.name[0]}</div>
-          )}
+          {userInfo.name && <div className="icon">{userInfo.name[0]}</div>}
         </div>
         <h1>{userInfo.name}</h1>
         <ConfigsContainer />

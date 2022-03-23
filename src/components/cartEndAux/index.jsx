@@ -1,31 +1,46 @@
 import { useContext, useEffect } from "react";
 import { CartEndContext } from "../../Providers/cartEnd";
+import { ConfigContext } from "../../Providers/userConfig";
+import { Api } from "../../services/api";
 
 export const CartEndAux = () => {
   const { userInput, setUserInput } = useContext(CartEndContext);
+  const { token } = useContext(ConfigContext);
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
   const eatingDays = [1, 2, 3, 4, 5, 6, 7];
   console.log(userInput);
+  console.log(userInput.offer);
+
+  let width = window.screen.width;
+
+  const codeCheck = () => {
+    Api.get("/codes")
+      .then((response) => {
+        console.log(response);
+        let validation = response.data.find((item, i) => {
+          return item.code === userInput.code;
+        });
+        console.log(validation.offer);
+        setUserInput({ ...userInput, offer: parseFloat(validation.offer) });
+      })
+      .catch((err) => console.log(err));
+  };
 
   const calculator = () => {
     let total =
       15 * parseInt(userInput.infoMeal) * 2 * parseInt(userInput.days);
-    console.log(total);
-    setUserInput({
-      ...userInput,
-      total: total.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      }),
-    });
-    return total;
-  };
 
-  let width = window.screen.width;
+    if (userInput.offer) {
+      let discount = userInput.offer * total;
+      setUserInput({ ...userInput, total: total - discount });
+    } else {
+      setUserInput({ ...userInput, total: total });
+    }
+  };
 
   useEffect(() => {
     calculator();
-  }, [userInput.days]);
+  }, [userInput.days || userInput.infoMeal || userInput.offer]);
 
   return (
     <>
@@ -69,11 +84,18 @@ export const CartEndAux = () => {
             <p>Preço de cada refeição:</p>
             <p>R$ 15,00</p>
           </div>
-          <input placeholder="Digite o código de convite"></input>
+          <div className="codeInput">
+            <input
+              onChange={(event) => {
+                setUserInput({ ...userInput, code: event.target.value });
+              }}
+              placeholder="Digite o código de convite"
+            ></input>
+            <button onClick={codeCheck}>Aplicar</button>
+          </div>
 
           <h3>Total: R$ {userInput.total},00</h3>
 
-          {/* <h4>Desconto: </h4> */}
           <div className="containerButton">
             <button>PAGAR</button>
           </div>
