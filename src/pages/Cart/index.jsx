@@ -19,7 +19,7 @@ const Cart = ({ data }) => {
     <ContainerCart>
       <div className="containerHeader">
         <Link to="/menu">
-          <button>&lt; ir ao menu</button>
+          <button>IR PARA LISTA</button>
         </Link>
       </div>
       <h1>Carrinho</h1>

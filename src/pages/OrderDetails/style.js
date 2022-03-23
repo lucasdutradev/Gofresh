@@ -7,15 +7,15 @@ export const Header = styled.div`
   justify-content: flex-start;
   width: 100%;
   height: 85px;
-  background-color: #eeeeee;
+  background-color: var(--white-gray);
   border-radius: 0 0 30px 30px;
 
   button {
     margin: 9px;
     width: 64px;
     height: 21px;
-    background-color: #cfdf6e;
-    color: #ffffff;
+    background-color: var(--lima);
+    color: var(--white);
     border-radius: 5px 5px 5px 5px;
     font-size: 7px;
     border: none;
@@ -42,7 +42,7 @@ export const Section2 = styled.section`
   justify-content: space-between;
   margin: 10px 10px 10px 10px;
   p {
-    color: rgba(31, 48, 0, 0.5);
+    color: var(--green);
     span {
       color: #111111;
     }
@@ -51,12 +51,12 @@ export const Section2 = styled.section`
 export const Section3 = styled.section`
   display: flex;
   justify-content: space-around;
-  border: solid 1px #cccccc;
+  border: solid 1px var(--white-gray);
 
   button {
     font-size: 15px;
     margin: 5px;
-    background-color: #ffffff;
+    background-color: var(--white);
     border: none;
     color: rgba(31, 48, 0, 0.5);
   }
@@ -101,7 +101,8 @@ export const ButtonRed = styled.div`
   height: 50px;
   border-radius: 50%;
   border: none;
-  background-color: #f44335;
+  background-color: var(--red);
+  padding-top: 5px;
 `;
 export const ButtonGray = styled.div`
   display: flex;
@@ -118,8 +119,8 @@ export const Section5 = styled.section`
   display: flex;
   justify-content: center;
   button {
-    background-color: #f44335;
-    color: #ffffff;
+    background-color: var(--red);
+    color: var(--white);
     width: 279px;
     height: 38px;
     border-radius: 5px;
@@ -137,19 +138,23 @@ export const Section6 = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    width: 279px;
-    height: 137px;
+    align-items: flex-start;
+    width: 290px;
+    height: 150px;
     background-color: rgba(241, 241, 241, 1);
     border-radius: 5px;
     margin: 70px;
+    overflow: scroll;
     p {
-      font-size: 12px;
+      color: var(--red);
+      font-size: 13px;
       margin: 12px;
     }
     span {
+      color: var(--gray);
       font-size: 12px;
       font-style: italic;
+      margin-left: 10px;
     }
   }
 `;
