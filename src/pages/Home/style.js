@@ -265,22 +265,56 @@ export const SectionCarousel = styled.section`
     align-items: center;
     min-height: 250px;
 
-    .w-100,
-    .d-block {
-        width: 30px;
-    }
-
     .Carousel {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         width: 90%;
         max-width: 800px;
         min-height: 200px;
         background-color: var(--lima);
 
+        .texts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 80%;
+            min-height: 270px;
+
+            img {
+                width: 30px;
+            }
+
+            .stars {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                div {
+                    width: 20px;
+                }
+
+                svg {
+                    width: 20px;
+                }
+            }
+
+            h2 {
+                font-weight: 400;
+                font-size: 25px;
+            }
+
+            p {
+                font-size: 20px;
+            }
+        }
+
         h3 {
-            color: var(--gray);
+            text-align: center;
+            font-weight: 700;
+            width: 10%;
+            color: var(--black);
+            cursor: pointer;
         }
     }
 

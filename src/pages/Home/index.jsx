@@ -7,10 +7,15 @@ import {
     SectionCarousel,
 } from "./style";
 import ImageOurTeam from "../../images/image-ourteam.svg";
-import CarouselContainer from "../../components/Carousel";
 import ButtonDefault from "../../components/Button";
+import Symbol from "../../images/quotationMarks.svg";
+import { HomeContext } from "../../Providers/home";
+import { useContext } from "react";
+import RatingIcon from "../../components/RatingIcon";
 
 const Home = () => {
+    const { rating, count, addCount, subCount } = useContext(HomeContext);
+
     return (
         <SectionHome>
             <Header />
@@ -43,7 +48,24 @@ const Home = () => {
                 </div>
             </SectionFoods>
             <SectionCarousel>
-                <CarouselContainer></CarouselContainer>
+                <div className="Carousel">
+                    <h3 onClick={subCount}>&#706;</h3>
+                    <div className="texts">
+                        <img src={Symbol} alt="Aspas" />
+                        <h2>{rating[count].title}</h2>
+                        <p>{rating[count].description}</p>
+                        <div className="stars">
+                            {[1, 2, 3, 4, 5].map((index) => (
+                                <RatingIcon
+                                    key={index}
+                                    index={index}
+                                    rating={rating}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    <h3 onClick={addCount}>&#707;</h3>
+                </div>
             </SectionCarousel>
         </SectionHome>
     );
