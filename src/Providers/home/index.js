@@ -4,6 +4,7 @@ export const HomeContext = createContext([]);
 
 export const HomeProvider = ({ children }) => {
     const [count, setCount] = useState(0);
+    const [modal, setModal] = useState(false);
 
     const rating = [
         { title: "Título 1", description: "Descrição 1" },
@@ -29,7 +30,9 @@ export const HomeProvider = ({ children }) => {
     };
 
     return (
-        <HomeContext.Provider value={{ rating, count, addCount, subCount }}>
+        <HomeContext.Provider
+            value={{ rating, count, addCount, subCount, modal, setModal }}
+        >
             {children}
         </HomeContext.Provider>
     );
