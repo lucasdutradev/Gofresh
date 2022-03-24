@@ -27,10 +27,13 @@ export const CartEndProvider = ({ children }) => {
   };
 
   const calculator = () => {
-    const total = 15 * userInput.infoMeal * 2 * userInput.days;
+    let total = 15 * userInput.infoMeal * 2 * userInput.days;
 
     if (userInput.offer) {
       let discount = userInput.offer * total - total;
+
+      console.log(discount);
+
       setUserInput({ ...userInput, total: discount });
     } else {
       setUserInput({ ...userInput, total: total });

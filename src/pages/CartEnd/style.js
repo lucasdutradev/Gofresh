@@ -41,19 +41,6 @@ export const CartEndStyles = styled.div`
     color: grey;
   }
 
-  .container button {
-    margin-top: 20px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(244, 67, 53, 1);
-    color: #fff;
-    height: 50px;
-    width: 100%;
-    font-size: 18px;
-    font-weight: bolder;
-  }
-
   .container input {
     margin-top: 15px;
     margin-bottom: 15px;

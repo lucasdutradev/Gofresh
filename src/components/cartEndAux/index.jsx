@@ -60,7 +60,13 @@ export const CartEndAux = () => {
             <button onClick={codeCheck}>Aplicar</button>
           </div>
 
-          <h3>Total: R$ {userInput.total},00</h3>
+          <h3>
+            {`Total: ${userInput.total.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}
+            `}
+          </h3>
 
           <div className="containerButton">
             <button>PAGAR</button>
