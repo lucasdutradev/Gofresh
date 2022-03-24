@@ -12,7 +12,7 @@ export const ConfigProvider = ({ children }) => {
     activeMeal: false,
   });
 
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState({});
 
   const userId = JSON.parse(localStorage.getItem("@IdUser"));
   const token = localStorage.getItem("@Token");
@@ -23,9 +23,8 @@ export const ConfigProvider = ({ children }) => {
     })
       .then((response) => {
         setUserInfo(response.data);
-        console.log(response.data);
       })
-      .catch((err) => console.log(err));
+      .catch((_) => {});
   };
 
   useEffect(() => {

@@ -19,6 +19,12 @@ const CardList = ({ data, negative }) => {
 
   return (
     <ContainerCardList>
+      {data.type && (
+        <span className="titleImg" isFavor={data.type === "Favoritos"}>
+          {console.log(data.type === "Favoritos")}
+          {data.type}
+        </span>
+      )}
       <ImageCard src={data.img} alt={data.name} />
       <ContainerInformation>
         <ContainerTitleRatingButton>

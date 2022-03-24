@@ -2,23 +2,63 @@ import { HeaderStyled, StyledBurger, Nav } from "./style";
 import Logo from "../../images/logoGoFresh.png";
 import { useContext } from "react";
 import { HeaderContext } from "../../Providers/header";
+import { ConfigContext } from "../../Providers/userConfig";
+import { Link } from "react-router-dom";
+import { FiCornerDownRight } from "react-icons/fi";
 
 const Header = () => {
   const { open, setOpen } = useContext(HeaderContext);
+  const { userInfo } = useContext(ConfigContext);
+  const desconect = () => {
+    localStorage.clear();
+    document.location.reload(true);
+  };
 
   return (
     <HeaderStyled>
       <img src={Logo} alt="Logomarca" />
+      {localStorage.getItem("@Token") && (
+        <Link to="configuration">
+          <div className="containerUser">
+            {userInfo.name !== undefined && userInfo.name[0]}
+          </div>
+        </Link>
+      )}
+
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
         <div />
       </StyledBurger>
       <Nav open={open}>
-        <li>Início</li>
-        <li>Cardápio</li>
-        <li>Cadastrar</li>
-        <li>Entrar</li>
+        <Link to="/">
+          <li>Início</li>
+        </Link>
+        <Link to="/menu">
+          <li>Cardápio</li>
+        </Link>
+        {localStorage.getItem("@Token") ? (
+          <>
+            <Link to="/register">
+              <li>configuração</li>
+            </Link>
+            <hr />
+            <button onClick={desconect}>
+              <li>
+                Desconectar <FiCornerDownRight />
+              </li>
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/register">
+              <li>Cadastrar</li>
+            </Link>
+            <Link to="/login">
+              <li>Entrar</li>
+            </Link>
+          </>
+        )}
       </Nav>
     </HeaderStyled>
   );
