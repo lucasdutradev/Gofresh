@@ -9,6 +9,7 @@ import {
     ContainerTitleRatingButton,
     ContainerTitleRating,
     ButtonAdd,
+    SpanTypes,
 } from "./styles";
 import { CartContext } from "../../Providers/cart";
 import { useContext } from "react";
@@ -19,11 +20,12 @@ const CardList = ({ data, negative }) => {
 
     return (
         <ContainerCardList>
-            {data.type && (
-                <span className="titleImg" isFavor={data.type === "Favoritos"}>
-                    {data.type}
-                </span>
-            )}
+            <div className="containerSpan">
+                {data.type && (
+                    <SpanTypes isFavor={data.type}>{data.type}</SpanTypes>
+                )}
+            </div>
+
             <ImageCard src={data.img} alt={data.name} />
             <ContainerInformation>
                 <ContainerTitleRatingButton>

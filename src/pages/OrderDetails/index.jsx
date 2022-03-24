@@ -20,7 +20,6 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { ConfigContext } from "../../Providers/userConfig";
 import { CartEndContext } from "../../Providers/cartEnd";
 
 export const OrderDetails = () => {
@@ -29,7 +28,6 @@ export const OrderDetails = () => {
     const [change, setChange] = useState(true);
 
     const { cart } = useContext(CartContext);
-    const { selected } = useContext(ConfigContext);
     const { userInput } = useContext(CartEndContext);
 
     if (!localStorage.getItem("@Token")) {
@@ -49,14 +47,19 @@ export const OrderDetails = () => {
                 </Section1>
                 <Section2>
                     <p>
-                        Entrega do pedido:{" "}
-                        <span>{console.log(selected.idDays)}</span>
+                        Entrega do pedido: <span>{userInput.infoDay}</span>
                     </p>
                     <p>
                         Numero de ref.: <span>#24658</span>
                     </p>
                     <p>
-                        Total: <span>{userInput.total}</span>
+                        Total:
+                        <span>
+                            {userInput.total.toLocaleString("pt-br", {
+                                style: "currency",
+                                currency: "BRL",
+                            })}
+                        </span>
                     </p>
                 </Section2>
 
@@ -76,27 +79,15 @@ export const OrderDetails = () => {
                                 </ButtonRed>
                                 <span>│</span>
                                 <ButtonGray>
-                                    {" "}
-                                    <img
-                                        alt="ButtonGray"
-                                        src={checkGrey}
-                                    />{" "}
+                                    <img alt="ButtonGray" src={checkGrey} />
                                 </ButtonGray>
                                 <span>│</span>
                                 <ButtonGray>
-                                    {" "}
-                                    <img
-                                        alt="ButtonGray"
-                                        src={checkGrey}
-                                    />{" "}
+                                    <img alt="ButtonGray" src={checkGrey} />
                                 </ButtonGray>
                                 <span>│</span>
                                 <ButtonGray>
-                                    {" "}
-                                    <img
-                                        alt="ButtonGray"
-                                        src={checkGrey}
-                                    />{" "}
+                                    <img alt="ButtonGray" src={checkGrey} />
                                 </ButtonGray>
                             </Div1>
                             <Div2>
@@ -114,12 +105,12 @@ export const OrderDetails = () => {
                     <Section6>
                         <div>
                             <p>
-                                Refeição suficiente para {userInput.days} dias e
-                                {selected.idMeal} pessoas.
+                                {`Refeição suficiente para ${userInput.days} dias e ${userInput.infoMeal} pessoas.`}
                             </p>
                             {cart.map((item) => {
                                 return <span>{item.name} </span>;
                             })}
+                            {console.log(cart)}
                         </div>
                     </Section6>
                 )}
