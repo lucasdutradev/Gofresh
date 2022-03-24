@@ -20,17 +20,10 @@ export const ConfigProvider = ({ children }) => {
   const getUser = () => {
     Api.get(`/users/${userId}`, {
       headers: { Authorization: `Bearer ${JSON.parse(token)}` },
-    })
-      .then((response) => {
-        setUserInfo(response.data);
-        console.log(response.data);
-      })
-      .catch((err) => console.log(err));
+    }).then((response) => setUserInfo(response.data));
   };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  useEffect(() => getUser());
 
   return (
     <ConfigContext.Provider
