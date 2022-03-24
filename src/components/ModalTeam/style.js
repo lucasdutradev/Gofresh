@@ -9,6 +9,7 @@ export const SectionModal = styled.section`
     height: 100%;
     position: fixed;
     z-index: 29;
+    overflow: auto;
     background-color: rgb(0, 0, 0, 9.5);
 `;
 
