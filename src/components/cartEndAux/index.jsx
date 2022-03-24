@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Providers/cart";
 import { CartEndContext } from "../../Providers/cartEnd";
+import { ContainerButton, ContainerImg, ContainerMain } from "./style";
 
 export const CartEndAux = () => {
   const { userInput, setUserInput, codeCheck } = useContext(CartEndContext);
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
   const { cart } = useContext(CartContext);
   return (
-    <>
+    <ContainerMain>
       <h1>Finalizar</h1>
       <div className="container">
         <div className="container1">
@@ -56,18 +57,16 @@ export const CartEndAux = () => {
             }`}
           </h3>
 
-          <div className="containerButton">
+          <ContainerButton className="containerButton">
             <Link to="/orderdetails">
               <button>PAGAR</button>
             </Link>
-          </div>
+          </ContainerButton>
         </div>
-        {/* {width > 800 && (
-          <div className="container2">
-            <img src="delivery.png" alt="" />
-          </div>
-        )} */}
+        <ContainerImg className="container2">
+          <img src="delivery.png" alt="" />
+        </ContainerImg>
       </div>
-    </>
+    </ContainerMain>
   );
 };

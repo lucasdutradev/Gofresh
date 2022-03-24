@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
 export const CartEndStyles = styled.div`
-  body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-
   h1 {
     margin-top: 20px;
     font-size: 52px;
@@ -68,9 +61,8 @@ export const CartEndStyles = styled.div`
 
   .containerButton {
     display: flex;
-    margin-left: -12px;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   @media screen and (min-width: 800px) {

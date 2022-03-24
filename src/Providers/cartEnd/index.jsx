@@ -18,7 +18,7 @@ export const CartEndProvider = ({ children }) => {
           (item) => item.code === userInput.code
         );
         setUserInput({ ...userInput, offer: validation.offer });
-        const countMath = 15 * userInput.infoMeal * 2 * userInput.days;
+        const countMath = 15 * userInput.infoMeal * 2 * cart.length;
         const discountMath = countMath * validation.offer;
         setUserInput({ ...userInput, total: countMath - discountMath });
       })
@@ -27,8 +27,7 @@ export const CartEndProvider = ({ children }) => {
 
   const calculator = () => {
     if (userInput.infoMeal !== undefined && userInput.days !== undefined) {
-      const total =
-        15 * cart.length * (userInput.infoMeal * 2) * userInput.days;
+      const total = 15 * userInput.infoMeal * 2 * cart.length;
       const discount = userInput.offer * total;
       setUserInput({ ...userInput, total: total - discount });
     }

@@ -21,10 +21,9 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
 import { CartEndContext } from "../../Providers/cartEnd";
+import { HeaderB } from "../../components/HeaderB";
 
 export const OrderDetails = () => {
-  const history = useHistory();
-
   const [change, setChange] = useState(true);
 
   const { cart } = useContext(CartContext);
@@ -36,9 +35,7 @@ export const OrderDetails = () => {
 
   return (
     <PrincipalContainer>
-      <Header>
-        <button onClick={() => history.push("/menu")}>IR PARA LISTA</button>
-      </Header>
+      <HeaderB />
       <Main>
         <Section1>
           <h1>Detalhes do pedido</h1>
@@ -103,10 +100,9 @@ export const OrderDetails = () => {
               <p>
                 {`Refeição suficiente para ${userInput.days} dias e ${userInput.infoMeal} pessoas.`}
               </p>
-              {cart.map((item) => {
-                return <span>{item.name} </span>;
-              })}
-              {console.log(cart)}
+              {cart.map((item, index) => (
+                <li key={index}>{item.name}</li>
+              ))}
             </div>
           </Section6>
         )}

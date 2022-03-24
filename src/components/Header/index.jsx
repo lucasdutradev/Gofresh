@@ -7,64 +7,64 @@ import { Link } from "react-router-dom";
 import { FiCornerDownRight } from "react-icons/fi";
 
 const Header = () => {
-    const { open, setOpen } = useContext(HeaderContext);
-    const { userInfo } = useContext(ConfigContext);
-    const desconect = () => {
-        localStorage.clear();
-        document.location.reload(true);
-    };
+  const { open, setOpen } = useContext(HeaderContext);
+  const { userInfo } = useContext(ConfigContext);
+  const desconect = () => {
+    localStorage.clear();
+    document.location.reload(true);
+  };
 
-    return (
-        <HeaderStyled>
-            <Link to="/">
-                <img src={Logo} alt="Logomarca" />
+  return (
+    <HeaderStyled>
+      <Link to="/">
+        <img src={Logo} alt="Logomarca" />
+      </Link>
+
+      {localStorage.getItem("@Token") && (
+        <Link to="configuration">
+          <div className="containerUser">
+            {userInfo.name !== undefined && userInfo.name[0]}
+          </div>
+        </Link>
+      )}
+
+      <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <div />
+        <div />
+        <div />
+      </StyledBurger>
+      <Nav open={open}>
+        <Link to="/">
+          <li>Início</li>
+        </Link>
+        <Link to="/menu">
+          <li>Cardápio</li>
+        </Link>
+        {localStorage.getItem("@Token") ? (
+          <>
+            <Link to="/configuration">
+              <li>configuração</li>
             </Link>
-
-            {localStorage.getItem("@Token") && (
-                <Link to="configuration">
-                    <div className="containerUser">
-                        {userInfo.name !== undefined && userInfo.name[0]}
-                    </div>
-                </Link>
-            )}
-
-            <StyledBurger open={open} onClick={() => setOpen(!open)}>
-                <div />
-                <div />
-                <div />
-            </StyledBurger>
-            <Nav open={open}>
-                <Link to="/">
-                    <li>Início</li>
-                </Link>
-                <Link to="/menu">
-                    <li>Cardápio</li>
-                </Link>
-                {localStorage.getItem("@Token") ? (
-                    <>
-                        <Link to="/register">
-                            <li>configuração</li>
-                        </Link>
-                        <hr />
-                        <button onClick={desconect}>
-                            <li>
-                                Desconectar <FiCornerDownRight />
-                            </li>
-                        </button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/register">
-                            <li>Cadastrar</li>
-                        </Link>
-                        <Link to="/login">
-                            <li>Entrar</li>
-                        </Link>
-                    </>
-                )}
-            </Nav>
-        </HeaderStyled>
-    );
+            <hr />
+            <button onClick={desconect}>
+              <li>
+                Desconectar <FiCornerDownRight />
+              </li>
+            </button>
+          </>
+        ) : (
+          <>
+            <Link to="/register">
+              <li>Cadastrar</li>
+            </Link>
+            <Link to="/login">
+              <li>Entrar</li>
+            </Link>
+          </>
+        )}
+      </Nav>
+    </HeaderStyled>
+  );
 };
 
 export default Header;
