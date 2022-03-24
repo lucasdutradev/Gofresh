@@ -6,11 +6,19 @@ export const ButtonRed = styled.button`
     border-radius: 5px;
     font-size: 15px;
     font-weight: 700;
-    background-color: #f44335;
-    color: #fff;
+    line-height: 0px;
+    background-color: var(--red);
+    border: 2px solid var(--red);
+    color: var(--white);
     width: 100%;
     max-width: 130px;
     min-height: 34px;
+    transition: 0.2s ease-in-out;
+
+    :hover {
+        background-color: transparent;
+        color: var(--red);
+    }
 
     @media screen and (min-width: 500px) {
         font-size: 17px;

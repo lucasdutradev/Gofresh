@@ -53,7 +53,7 @@ export const StyledBurger = styled.div`
 
     div {
         width: 32px;
-        height: 3.7px;
+        height: 4px;
         background-color: var(--red);
         border-radius: 10px;
         transform-origin: 0.5px;
