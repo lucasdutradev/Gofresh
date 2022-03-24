@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const SectionModal = styled.section`
     display: flex;
-    flex-flow: row wrap;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -41,6 +40,15 @@ export const ExitIcon = styled.div`
             transform: rotate(-45deg);
         }
     }
+`;
+
+export const DivCards = styled.div`
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
 `;
 
 export const Card = styled.div`

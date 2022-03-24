@@ -7,7 +7,7 @@ import {
     SectionCarousel,
     DivTextsBanner,
 } from "./style";
-import ImageOurTeam from "../../images/image-ourteam.svg";
+import ImageOurTeam from "../../images/image-ourteam.png";
 import ButtonDefault from "../../components/Button";
 import Symbol from "../../images/quotationMarks.svg";
 import { HomeContext } from "../../Providers/home";
@@ -30,13 +30,13 @@ const Home = () => {
                 <DivBanner>
                     <DivTextsBanner>
                         <img src={WhiteLogo} alt="" />
-                        <h1>Pratos frescos e saudaveis</h1>
-                        <small>Trasforme a sua experiencia.</small>
+                        <h1>Pratos frescos e saudáveis</h1>
+                        <small>Trasforme a sua experiência</small>
                         <div>
                             <ButtonDefault
                                 onClick={() => history.push("/register")}
                             >
-                                Registre
+                                Registre-se
                             </ButtonDefault>
                             <button
                                 onClick={() => history.push("/login")}
@@ -59,10 +59,10 @@ const Home = () => {
                             </div>
 
                             <p>
-                                Go fresh in your home Go fresh in your home Go
-                                fresh in your home Go fresh in your home Go
-                                fresh in your home Go fresh in your home Go
-                                fresh in your home.
+                                Em 2022, mais do que nunca, nós oferecemos ao
+                                consumidor uma solução segura e prática para que
+                                ele encontre ingredientes frescos e de
+                                qualidade.
                             </p>
                         </div>
                         <ButtonDefault onClick={() => setModal(true)}>
