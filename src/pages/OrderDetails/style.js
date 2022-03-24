@@ -26,7 +26,7 @@ export const Section1 = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 25px;
+  margin: 25px 0;
 
   h1 {
     text-align: center;
@@ -37,25 +37,33 @@ export const Section1 = styled.section`
   }
 `;
 export const Section2 = styled.section`
+  @media screen and (min-width: 768px) {
+    font-size: 13px;
+  }
   display: flex;
-  font-size: 10px;
-  justify-content: space-between;
-  margin: 10px 10px 10px 10px;
+  font-size: 7px;
+  justify-content: space-evenly;
   p {
     color: var(--green);
     span {
+      font-size: 10px;
       color: #111111;
+      @media screen and (min-width: 768px) {
+        font-size: 15px;
+      }
     }
   }
 `;
 export const Section3 = styled.section`
   display: flex;
   justify-content: space-around;
-  border: solid 1px var(--white-gray);
+  border-top: solid 1px var(--white-gray);
+  border-bottom: solid 1px var(--white-gray);
+  width: 100%;
 
   button {
     font-size: 15px;
-    margin: 5px;
+    margin: 5px 0;
     background-color: var(--white);
     border: none;
     color: rgba(31, 48, 0, 0.5);
@@ -140,17 +148,24 @@ export const Section6 = styled.section`
     justify-content: flex-start;
     align-items: flex-start;
     width: 290px;
-    height: 150px;
+    height: 180px;
     background-color: rgba(241, 241, 241, 1);
     border-radius: 5px;
-    margin: 70px;
-    overflow: scroll;
+    margin: 70px 0;
+    overflow: auto;
+
+    @media screen and (min-width: 768px) {
+      width: 390px;
+      height: 180px;
+    }
     p {
+      width: 100%;
+      text-align: center;
       color: var(--red);
       font-size: 13px;
-      margin: 12px;
+      margin: 12px 0;
     }
-    span {
+    li {
       color: var(--gray);
       font-size: 12px;
       font-style: italic;

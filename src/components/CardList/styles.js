@@ -12,6 +12,18 @@ const fadeIn = keyframes`
   }
 `;
 
+export const SpanTypes = styled.div`
+  width: 50%;
+  text-align: right;
+  background-color: ${(props) =>
+    props.isFavor === "Favoritos" ? "#F44335" : "#FFE600"};
+  color: ${(props) => (props.isFavor === "Favoritos" ? "#FFFF" : "#000")};
+  border-radius: 0 10px 0 10px;
+  box-shadow: -1px 3px 3px 0px #ccc;
+  padding: 0 5px;
+  box-sizing: border-box;
+`;
+
 export const ContainerCardList = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +31,14 @@ export const ContainerCardList = styled.div`
   width: 280px;
   height: 300px;
   animation: ${fadeIn} 2s;
+
+  .containerSpan {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(23px);
+    width: 100%;
+    z-index: 1;
+  }
 
   @media screen and (min-width: 558px) {
     margin: 0 100px;
