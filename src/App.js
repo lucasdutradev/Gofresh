@@ -1,7 +1,7 @@
-import Menu from "./pages/Menu";
+import DefaultRoutes from "./routes";
 
 function App() {
-  return <Menu />;
+    return <DefaultRoutes />;
 }
 
 export default App;
