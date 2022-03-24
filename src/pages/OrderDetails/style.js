@@ -140,7 +140,7 @@ export const Section6 = styled.section`
     justify-content: flex-start;
     align-items: flex-start;
     width: 290px;
-    height: 150px;
+    height: 160px;
     background-color: rgba(241, 241, 241, 1);
     border-radius: 5px;
     margin: 70px;
@@ -150,10 +150,10 @@ export const Section6 = styled.section`
       font-size: 13px;
       margin: 12px;
     }
-    span {
+    li {
       color: var(--gray);
-      font-size: 12px;
-      font-style: italic;
+      font-size: 10px;
+
       margin-left: 10px;
     }
   }

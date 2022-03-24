@@ -104,7 +104,7 @@ export const OrderDetails = () => {
                 {selected.idMeal} pessoas.
               </p>
               {cart.map((item) => {
-                return <span>{item.name} </span>;
+                return <li>{item.name}</li>;
               })}{" "}
               {console.log(cart)}
             </div>
