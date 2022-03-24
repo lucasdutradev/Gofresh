@@ -1,5 +1,4 @@
 import { Redirect } from "react-router-dom";
-import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { ConfigsContainer } from "../../components/configHandlers";
@@ -20,7 +19,7 @@ export const UserConfig = () => {
       : toast.error("Selecione as opções.");
 
   return (
-    <UserConfigStyles>
+    <>
       <HeaderB />
       <div className="container">
         <div className="iconContainer">
@@ -32,6 +31,6 @@ export const UserConfig = () => {
           Salvar configurações
         </button>
       </div>
-    </UserConfigStyles>
+    </>
   );
 };
