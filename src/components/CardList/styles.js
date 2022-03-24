@@ -12,6 +12,18 @@ const fadeIn = keyframes`
   }
 `;
 
+export const Span = styled.span`
+  width: 50%;
+  text-align: right;
+  background-color: ${(props) =>
+    props.isFavor === "Favoritos" ? "#F44335" : "#FFE600"};
+  color: ${(props) => (props.isFavor === "Favoritos" ? "#FFFF" : "#000")};
+  border-radius: 0 10px 0 10px;
+  box-shadow: -1px 3px 3px 0px #ccc;
+  padding: 0 5px;
+  box-sizing: border-box;
+`;
+
 export const ContainerCardList = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,11 +32,11 @@ export const ContainerCardList = styled.div`
   height: 300px;
   animation: ${fadeIn} 2s;
 
-  .titleImg {
+  .containerSpan {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(23px);
     width: 100%;
-    text-align: right;
-    transform: translateY(20px);
-    background-color: ${(props) => (props.isFavor ? "#F44335" : "#FFE600")};
     z-index: 1;
   }
 
