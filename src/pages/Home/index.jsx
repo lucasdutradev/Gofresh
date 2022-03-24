@@ -30,13 +30,13 @@ const Home = () => {
                 <DivBanner>
                     <DivTextsBanner>
                         <img src={WhiteLogo} alt="" />
-                        <h1>Pratos frescos e saudaveis</h1>
-                        <small>Trasforme a sua experiencia.</small>
+                        <h1>Pratos frescos e saudáveis</h1>
+                        <small>Trasforme a sua experiência</small>
                         <div>
                             <ButtonDefault
                                 onClick={() => history.push("/register")}
                             >
-                                Registre
+                                Registre-se
                             </ButtonDefault>
                             <button
                                 onClick={() => history.push("/login")}
