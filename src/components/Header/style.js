@@ -12,6 +12,31 @@ export const HeaderStyled = styled.section`
         width: 100px;
         margin-left: 30px;
     }
+
+    button {
+        border: none;
+        background-color: transparent;
+    }
+
+    hr {
+        color: white;
+    }
+
+    a {
+        color: black;
+    }
+
+    .containerUser {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+        background-color: #ccc;
+        margin-right: 100px;
+    }
 `;
 
 export const StyledBurger = styled.div`

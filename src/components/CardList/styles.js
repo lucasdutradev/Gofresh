@@ -20,6 +20,14 @@ export const ContainerCardList = styled.div`
   height: 300px;
   animation: ${fadeIn} 2s;
 
+  .titleImg {
+    width: 100%;
+    text-align: right;
+    transform: translateY(20px);
+    background-color: ${(props) => (props.isFavor ? "#F44335" : "#FFE600")};
+    z-index: 1;
+  }
+
   @media screen and (min-width: 558px) {
     margin: 0 100px;
   }

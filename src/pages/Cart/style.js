@@ -16,22 +16,24 @@ export const ContainerCart = styled.div`
   }
 
   .containerHeader {
-    width: 100vw;
-    height: 115px;
-    text-align: left;
-    padding-top: 20px;
-    padding-left: 20px;
-    background-color: var(--white-gray);
-    border-radius: 0 0 35px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 85px;
+    background-color: #eeeeee;
+    border-radius: 0 0 30px 30px;
   }
 
   .containerHeader button {
-    padding: 5px 15px;
-    color: white;
-    border-radius: 12px;
-    font-weight: 700;
-    border-style: none;
-    background-color: var(--lima);
+    margin: 9px;
+    width: 64px;
+    height: 21px;
+    background-color: #cfdf6e;
+    color: #ffffff;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 7px;
+    border: none;
   }
 
   h1 {
