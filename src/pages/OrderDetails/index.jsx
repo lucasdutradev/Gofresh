@@ -3,7 +3,6 @@ import checkOrange from "../../images/check.svg";
 import checkGrey from "../../images/checkgrey.svg";
 import {
   PrincipalContainer,
-  Header,
   Main,
   Section1,
   Section2,
@@ -16,7 +15,6 @@ import {
   ButtonRed,
   ButtonGray,
 } from "./style";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";

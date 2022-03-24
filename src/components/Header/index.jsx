@@ -22,9 +22,11 @@ const Header = () => {
 
       {localStorage.getItem("@Token") && (
         <Link to="configuration">
-          <div className="containerUser">
-            {userInfo.name !== undefined && userInfo.name[0]}
-          </div>
+          {userInfo.name !== undefined ? (
+            <div className="containerUser">{userInfo.name[0]}</div>
+          ) : (
+            <div className="containerUser">A</div>
+          )}
         </Link>
       )}
 
