@@ -5,16 +5,20 @@ import {
     SectionOurTeam,
     SectionFoods,
     SectionCarousel,
+    DivTextsBanner,
 } from "./style";
 import ImageOurTeam from "../../images/image-ourteam.svg";
 import ButtonDefault from "../../components/Button";
 import Symbol from "../../images/quotationMarks.svg";
 import { HomeContext } from "../../Providers/home";
 import { useContext } from "react";
-import RatingIcon from "../../components/RatingIcon";
+import YellowStar from "../../images/yellowStar.svg";
 import ModalTeam from "../../components/ModalTeam";
+import WhiteLogo from "../../images/whitelogo.png";
+import { useHistory } from "react-router-dom";
 
 const Home = () => {
+    const history = useHistory();
     const { rating, count, addCount, subCount, modal, setModal } =
         useContext(HomeContext);
 
@@ -23,7 +27,26 @@ const Home = () => {
             {modal && <ModalTeam />}
             <SectionHome>
                 <Header />
-                <DivBanner />
+                <DivBanner>
+                    <DivTextsBanner>
+                        <img src={WhiteLogo} alt="" />
+                        <h1>Pratos frescos e saudaveis</h1>
+                        <small>Trasforme a sua experiencia.</small>
+                        <div>
+                            <ButtonDefault
+                                onClick={() => history.push("/register")}
+                            >
+                                Registre
+                            </ButtonDefault>
+                            <button
+                                onClick={() => history.push("/login")}
+                                className="button-transparent"
+                            >
+                                Login
+                            </button>
+                        </div>
+                    </DivTextsBanner>
+                </DivBanner>
                 <SectionOurTeam>
                     <div className="left">
                         <img src={ImageOurTeam} alt="" />
@@ -43,7 +66,7 @@ const Home = () => {
                             </p>
                         </div>
                         <ButtonDefault onClick={() => setModal(true)}>
-                            NOSSO TIME
+                            Nosso Time
                         </ButtonDefault>
                     </div>
                 </SectionOurTeam>
@@ -51,7 +74,7 @@ const Home = () => {
                     <div>
                         <small>Cardápio</small>
                         <h2>Conheça nossos pratos</h2>
-                        <ButtonDefault>PRATOS</ButtonDefault>
+                        <ButtonDefault>Pratos</ButtonDefault>
                     </div>
                 </SectionFoods>
                 <SectionCarousel>
@@ -63,10 +86,10 @@ const Home = () => {
                             <p>{rating[count].description}</p>
                             <div className="stars">
                                 {[1, 2, 3, 4, 5].map((index) => (
-                                    <RatingIcon
+                                    <img
+                                        src={YellowStar}
+                                        alt="star"
                                         key={index}
-                                        index={index}
-                                        rating={rating}
                                     />
                                 ))}
                             </div>
