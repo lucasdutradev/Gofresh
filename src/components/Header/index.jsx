@@ -43,7 +43,7 @@ const Header = () => {
                 {localStorage.getItem("@Token") ? (
                     <>
                         <Link to="/register">
-                            <li>configuração</li>
+                            <li>Configurações</li>
                         </Link>
                         <hr />
                         <button onClick={desconect}>
