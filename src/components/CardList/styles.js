@@ -12,7 +12,7 @@ const fadeIn = keyframes`
   }
 `;
 
-export const Span = styled.span`
+export const SpanTypes = styled.div`
   width: 50%;
   text-align: right;
   background-color: ${(props) =>
