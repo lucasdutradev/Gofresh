@@ -59,10 +59,10 @@ const Home = () => {
                             </div>
 
                             <p>
-                                Go fresh in your home Go fresh in your home Go
-                                fresh in your home Go fresh in your home Go
-                                fresh in your home Go fresh in your home Go
-                                fresh in your home.
+                                Em 2022, mais do que nunca, nós oferecemos ao
+                                consumidor uma solução segura e prática para que
+                                ele encontre ingredientes frescos e de
+                                qualidade.
                             </p>
                         </div>
                         <ButtonDefault onClick={() => setModal(true)}>

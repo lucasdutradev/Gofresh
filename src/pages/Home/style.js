@@ -62,6 +62,7 @@ export const DivTextsBanner = styled.div`
 
     img {
         width: 80px;
+        margin-right: 35%;
     }
     h1 {
         width: 100%;
