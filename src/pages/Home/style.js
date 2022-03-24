@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Banner from "../../images/headerHome.svg";
-import FoodImage from "../../images/yellowDiv.svg";
+import FoodImage from "../../images/yellowDiv.png";
 
 export const SectionHome = styled.section`
     width: 100%;

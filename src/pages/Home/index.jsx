@@ -7,7 +7,7 @@ import {
     SectionCarousel,
     DivTextsBanner,
 } from "./style";
-import ImageOurTeam from "../../images/image-ourteam.svg";
+import ImageOurTeam from "../../images/image-ourteam.png";
 import ButtonDefault from "../../components/Button";
 import Symbol from "../../images/quotationMarks.svg";
 import { HomeContext } from "../../Providers/home";
