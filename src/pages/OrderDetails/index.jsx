@@ -19,7 +19,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
 import { CartEndContext } from "../../Providers/cartEnd";
-import { HeaderB } from "../../components/HeaderB";
+import HeaderB from "../../components/HeaderB";
 
 export const OrderDetails = () => {
   const [change, setChange] = useState(true);

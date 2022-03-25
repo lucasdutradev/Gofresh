@@ -1,7 +1,7 @@
 import { Redirect } from "react-router-dom";
 import { CartEndStyles } from "./style";
 import { CartEndAux } from "../../components/cartEndAux";
-import { HeaderB } from "../../components/HeaderB";
+import HeaderB from "../../components/HeaderB";
 import { CartEndContext } from "../../Providers/cartEnd";
 import { useContext } from "react";
 

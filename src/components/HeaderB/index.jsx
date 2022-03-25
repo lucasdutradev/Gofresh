@@ -1,7 +1,7 @@
 import { HeaderBStyle } from "./style";
 import { ButtonReturn } from "../ButtonReturn";
 
-export const HeaderB = () => {
+const HeaderB = () => {
   return (
     <>
       <HeaderBStyle>
@@ -10,3 +10,5 @@ export const HeaderB = () => {
     </>
   );
 };
+
+export default HeaderB;

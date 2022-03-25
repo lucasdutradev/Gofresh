@@ -2,8 +2,8 @@ import CardList from "../../components/CardList";
 import { ContainerCart } from "./style";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import HeaderB from "../../components/HeaderB";
 const Cart = ({ data }) => {
   const { cart, pushProduct } = useContext(CartContext);
   const history = useHistory();
@@ -17,11 +17,7 @@ const Cart = ({ data }) => {
   };
   return (
     <ContainerCart>
-      <div className="containerHeader">
-        <Link to="/menu">
-          <button>IR PARA LISTA</button>
-        </Link>
-      </div>
+      <HeaderB />
       <h1>Carrinho</h1>
       <div className="containerCart">
         {cart.map((data, index) => (

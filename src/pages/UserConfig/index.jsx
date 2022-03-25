@@ -3,7 +3,7 @@ import { UserConfigStyles } from "./style";
 import { useContext } from "react";
 import { ConfigContext } from "../../Providers/userConfig";
 import { ConfigsContainer } from "../../components/configHandler";
-import { HeaderB } from "../../components/HeaderB";
+import HeaderB from "../../components/HeaderB";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 

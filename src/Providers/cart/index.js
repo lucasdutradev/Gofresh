@@ -11,7 +11,9 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item) => setCart([...cart, item]);
 
   const removeFromCart = (item) => {
-    const newCart = cart.filter((itemOnCart) => itemOnCart.name !== item.name);
+    const indexItem = cart.indexOf(item);
+    const newCart = [...cart];
+    newCart.splice(indexItem, 1);
     setCart(newCart);
   };
 
