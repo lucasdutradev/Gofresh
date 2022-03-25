@@ -8,22 +8,25 @@ export const ConfigProvider = ({ children }) => {
   const [selected, setSelected] = useState({
     idDay: "",
     activeDay: false,
-    idMeal: "",
+    idMeal: 0,
     activeMeal: false,
   });
 
-  const [userInfo, setUserInfo] = useState([]);
+  const [userInfo, setUserInfo] = useState({});
 
   const userId = JSON.parse(localStorage.getItem("@IdUser"));
   const token = localStorage.getItem("@Token");
-
   const getUser = () => {
     Api.get(`/users/${userId}`, {
       headers: { Authorization: `Bearer ${JSON.parse(token)}` },
-    }).then((response) => setUserInfo(response.data));
+    })
+      .then((response) => {
+        setUserInfo(response.data);
+      })
+      .catch((_) => {});
   };
 
-  useEffect(() => getUser());
+  useEffect(() => getUser(), []);
 
   return (
     <ConfigContext.Provider

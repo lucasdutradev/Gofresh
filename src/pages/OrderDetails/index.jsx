@@ -3,7 +3,6 @@ import checkOrange from "../../images/check.svg";
 import checkGrey from "../../images/checkgrey.svg";
 import {
   PrincipalContainer,
-  Header,
   Main,
   Section1,
   Section2,
@@ -16,20 +15,16 @@ import {
   ButtonRed,
   ButtonGray,
 } from "./style";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../Providers/cart";
-import { ConfigContext } from "../../Providers/userConfig";
 import { CartEndContext } from "../../Providers/cartEnd";
+import { HeaderB } from "../../components/HeaderB";
 
 export const OrderDetails = () => {
-  const history = useHistory();
-
   const [change, setChange] = useState(true);
 
   const { cart } = useContext(CartContext);
-  const { selected } = useContext(ConfigContext);
   const { userInput } = useContext(CartEndContext);
 
   if (!localStorage.getItem("@Token")) {
@@ -38,22 +33,26 @@ export const OrderDetails = () => {
 
   return (
     <PrincipalContainer>
-      <Header>
-        <button onClick={() => history.push("/menu")}>IR PARA LISTA</button>
-      </Header>
+      <HeaderB />
       <Main>
         <Section1>
           <h1>Detalhes do pedido</h1>
         </Section1>
         <Section2>
           <p>
-            Entrega do pedido: <span>{console.log(selected.idDays)}</span>
+            Entrega do pedido: <span>{userInput.infoDay}</span>
           </p>
           <p>
             Numero de ref.: <span>#24658</span>
           </p>
           <p>
-            Total: <span>{userInput.total}</span>
+            Total:
+            <span>
+              {userInput.total.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
           </p>
         </Section2>
 
@@ -71,18 +70,15 @@ export const OrderDetails = () => {
                 </ButtonRed>
                 <span>│</span>
                 <ButtonGray>
-                  {" "}
-                  <img alt="ButtonGray" src={checkGrey} />{" "}
+                  <img alt="ButtonGray" src={checkGrey} />
                 </ButtonGray>
                 <span>│</span>
                 <ButtonGray>
-                  {" "}
-                  <img alt="ButtonGray" src={checkGrey} />{" "}
+                  <img alt="ButtonGray" src={checkGrey} />
                 </ButtonGray>
                 <span>│</span>
                 <ButtonGray>
-                  {" "}
-                  <img alt="ButtonGray" src={checkGrey} />{" "}
+                  <img alt="ButtonGray" src={checkGrey} />
                 </ButtonGray>
               </Div1>
               <Div2>
@@ -100,13 +96,11 @@ export const OrderDetails = () => {
           <Section6>
             <div>
               <p>
-                Refeição suficiente para {userInput.days} dias e{" "}
-                {selected.idMeal} pessoas.
+                {`Refeição suficiente para ${userInput.days} dias e ${userInput.infoMeal} pessoas.`}
               </p>
-              {cart.map((item) => {
-                return <span>{item.name} </span>;
-              })}{" "}
-              {console.log(cart)}
+              {cart.map((item, index) => (
+                <li key={index}>{item.name}</li>
+              ))}
             </div>
           </Section6>
         )}

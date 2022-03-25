@@ -16,10 +16,8 @@ export const CartEnd = () => {
 
   return (
     <CartEndStyles>
-      <>
-        <HeaderB />
-        <CartEndAux />
-      </>
+      <HeaderB />
+      <CartEndAux />
     </CartEndStyles>
   );
 };
