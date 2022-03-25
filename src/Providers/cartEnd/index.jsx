@@ -1,17 +1,16 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { Api } from "../../services/api";
-import { useEffect } from "react";
 
 export const CartEndContext = createContext({});
 
 export const CartEndProvider = ({ children }) => {
+  const cart = JSON.parse(localStorage.getItem("@ItemUser")) || [];
   const [userInput, setUserInput] = useState({
     hours: "",
-    days: 0,
+    days: cart.length,
     offer: 0,
-    total: 0,
     infoMeal: 0,
-    code: "",
+    total: 0,
   });
 
   const codeCheck = () => {
@@ -20,32 +19,30 @@ export const CartEndProvider = ({ children }) => {
         const validation = response.data.find(
           (item) => item.code === userInput.code
         );
-        const offer = parseFloat(validation.offer);
-        setUserInput({ ...userInput, offer: offer });
+        setUserInput({ ...userInput, offer: validation.offer });
+        const countMath = 15 * userInput.infoMeal * 2 * cart.length;
+        const discountMath = countMath * validation.offer;
+        setUserInput({ ...userInput, total: countMath - discountMath });
       })
-      .catch((_) => console.log(_));
+      .catch((_) => {});
   };
 
   const calculator = () => {
-    let total = 15 * userInput.infoMeal * 2 * userInput.days;
-
-    if (userInput.offer) {
-      let discount = userInput.offer * total - total;
-
-      console.log(discount);
-
-      setUserInput({ ...userInput, total: discount });
-    } else {
-      setUserInput({ ...userInput, total: total });
+    if (userInput.infoMeal !== undefined && userInput.days !== undefined) {
+      const total = 15 * userInput.infoMeal * 2 * cart.length;
+      const discount = userInput.offer * total;
+      setUserInput({ ...userInput, total: total - discount });
     }
   };
 
   useEffect(() => {
     calculator();
-  }, [userInput.days || userInput.infoMeal || userInput.offer]);
+  }, [userInput.infoMeal]);
 
   return (
-    <CartEndContext.Provider value={{ userInput, setUserInput, codeCheck }}>
+    <CartEndContext.Provider
+      value={{ userInput, setUserInput, codeCheck, calculator }}
+    >
       {children}
     </CartEndContext.Provider>
   );

@@ -6,6 +6,7 @@ export const LoginContext = createContext({});
 
 export const LoginProvider = ({ children }) => {
   const [isLogin, setIsLogin] = useState(false);
+
   const handleSubmitPostLogin = (data) => {
     Api.post("/login", data)
       .then((response) => {

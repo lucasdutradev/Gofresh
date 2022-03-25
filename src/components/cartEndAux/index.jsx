@@ -1,15 +1,26 @@
+import { useEffect } from "react";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../Providers/cart";
 import { CartEndContext } from "../../Providers/cartEnd";
+import { ContainerButton, ContainerImg, ContainerMain } from "./style";
 
 export const CartEndAux = () => {
-  const { userInput, setUserInput, codeCheck } = useContext(CartEndContext);
+  const { userInput, setUserInput, codeCheck, calculator } =
+    useContext(CartEndContext);
   const receivingHours = ["8:00", "10:00", "14:00", "16:00", "19:00"];
-  const eatingDays = [1, 2, 3, 4, 5, 6, 7];
+  const { cart } = useContext(CartContext);
 
-  let width = window.screen.width;
+  useEffect(() => {
+    calculator();
+  }, []);
+
+  useEffect(() => {
+    calculator();
+  }, [userInput.infoMeal || cart.lenght]);
 
   return (
-    <>
+    <ContainerMain>
       <h1>Finalizar</h1>
       <div className="container">
         <div className="container1">
@@ -30,55 +41,43 @@ export const CartEndAux = () => {
             </select>
           </p>
           <p>{`Pessoas por refeição: ${userInput.infoMeal}`}</p>
-          <p>
-            Refeições para quantos dias?
-            <select
-              className="Select"
-              onChange={(event) => {
-                setUserInput({
-                  ...userInput,
-                  days: parseInt(event.target.value),
-                });
-              }}
-            >
-              {eatingDays.map((days, i) => (
-                <option key={i}>{days}</option>
-              ))}
-            </select>
-          </p>
+          <p>{`Refeições para ${cart.length} dias`}</p>
           <div className="lunchPrices">
             <p>Preço de cada refeição:</p>
             <p>R$ 15,00</p>
           </div>
           <div className="codeInput">
             <input
+              onBlur={() => {
+                codeCheck();
+              }}
               onChange={(event) => {
                 setUserInput({ ...userInput, code: event.target.value });
               }}
               placeholder="Digite o código de convite"
             ></input>
-            <button onClick={codeCheck}>Aplicar</button>
           </div>
 
           <h3>
-            {`Total: ${userInput.total.toLocaleString("pt-br", {
-              style: "currency",
-              currency: "BRL",
-            })}
-            `}
+            {`Total: ${
+              userInput.total &&
+              userInput.total.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })
+            }`}
           </h3>
 
-          <div className="containerButton">
-            <button>PAGAR</button>
-          </div>
+          <ContainerButton className="containerButton">
+            <Link to="/orderdetails">
+              <button>PAGAR</button>
+            </Link>
+          </ContainerButton>
         </div>
-
-        {width > 800 && (
-          <div className="container2">
-            <img src="delivery.png" alt="" />
-          </div>
-        )}
+        <ContainerImg className="container2">
+          <img src="delivery.png" alt="" />
+        </ContainerImg>
       </div>
-    </>
+    </ContainerMain>
   );
 };
