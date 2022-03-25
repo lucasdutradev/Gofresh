@@ -7,10 +7,26 @@ export const HomeProvider = ({ children }) => {
   const [modal, setModal] = useState(false);
 
   const rating = [
-    { title: "Título 1", description: "Descrição 1" },
-    { title: "Título 2", description: "Descrição 2" },
-    { title: "Título 3", description: "Descrição 3" },
-    { title: "Título 4", description: "Descrição 4" },
+    {
+      title: "Mariana Oliveira",
+      description:
+        "Pratos muito bons e de fácil preparo. Está sendo melhor cozinhar com Go Fresh... Ganhei mais tempo nos meus dias. Recomendo!!",
+    },
+    {
+      title: "Antonio Carlos S.",
+      description:
+        "Aprendi muitas receitas novas, e não preciso mais me preocupar de ir ao mercado. Agora com go fresh, minha geladeira tem sempre alimentos de qualidade e na quantidade correta.",
+    },
+    {
+      title: "Daniel Ferreira",
+      description:
+        "Rápido, prático e muito gostoso. Go fresh tem salvado minhas semanas corridas. Recomendo 100%.",
+    },
+    {
+      title: "Lucia Silva",
+      description:
+        "Testado e aprovado!! Muito bom poder escolher pratos diferentes para cada dia da semana, e receber alimentos frescos e bem embalados. Ainda posso escolher o dia que quero receber.",
+    },
   ];
 
   const addCount = () => {
