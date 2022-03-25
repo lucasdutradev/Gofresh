@@ -32,13 +32,12 @@ export const CartEndAux = () => {
           <p>{`Pessoas por refeição: ${userInput.infoMeal}`}</p>
           <p>{`Refeições para ${cart.length} dias`}</p>
           <div className="lunchPrices">
-            <p>Preço de cada refeição:</p>
-            <p>R$ 15,00</p>
+            <p>Preço de cada refeição: R$ 15,00</p>
           </div>
           <div className="codeInput">
             <input
-              onBlur={() => {
-                codeCheck();
+              onBlur={(evt) => {
+                codeCheck(evt.target.value);
               }}
               onChange={(event) => {
                 setUserInput({ ...userInput, code: event.target.value });

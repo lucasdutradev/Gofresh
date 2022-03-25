@@ -11,9 +11,9 @@ export const CartEndProvider = ({ children }) => {
     offer: 0,
   });
 
-  const codeCheck = () => {
-    Api.get("/codes")
-      .then((response) => {
+  const codeCheck = (value) => {
+    if (value !== "") {
+      Api.get("/codes").then((response) => {
         const validation = response.data.find(
           (item) => item.code === userInput.code
         );
@@ -21,8 +21,12 @@ export const CartEndProvider = ({ children }) => {
         const countMath = 15 * userInput.infoMeal * 2 * cart.length;
         const discountMath = countMath * validation.offer;
         setUserInput({ ...userInput, total: countMath - discountMath });
-      })
-      .catch((_) => {});
+      });
+    } else {
+      setUserInput({ ...userInput, offer: 0 });
+      const countMath = 15 * userInput.infoMeal * 2 * cart.length;
+      setUserInput({ ...userInput, total: countMath });
+    }
   };
 
   const calculator = () => {

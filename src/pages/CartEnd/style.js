@@ -63,6 +63,15 @@ export const CartEndStyles = styled.div`
     display: flex;
     width: 100%;
     justify-content: flex-start;
+    button {
+      border: 2px solid var(--red);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: transparent;
+      color: var(--red);
+    }
   }
 
   @media screen and (min-width: 800px) {

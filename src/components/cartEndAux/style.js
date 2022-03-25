@@ -10,6 +10,27 @@ export const ContainerMain = styled.section`
       align-items: flex-start;
     }
   }
+  .lunchPrices {
+    p {
+      font-size: 13px;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .codeInput {
+    input {
+      border: 1px solid var(--white-gray);
+      text-align: center;
+    }
+  }
+
+  select {
+    border-radius: 10px;
+  }
 `;
 
 export const ContainerButton = styled.div`
