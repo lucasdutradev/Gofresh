@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
 export const CartEndStyles = styled.div`
-  body {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-
   h1 {
     margin-top: 20px;
     font-size: 52px;
@@ -68,9 +61,17 @@ export const CartEndStyles = styled.div`
 
   .containerButton {
     display: flex;
-    margin-left: -12px;
     width: 100%;
-    justify-content: center;
+    justify-content: flex-start;
+    button {
+      border: 2px solid var(--red);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: transparent;
+      color: var(--red);
+    }
   }
 
   @media screen and (min-width: 800px) {

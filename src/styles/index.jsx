@@ -8,7 +8,22 @@ export default createGlobalStyle`
     }
     html {
         width: 100%;
-            height: 100%;
+        height: 100%;
+
+        ::-webkit-scrollbar {
+            width: 5px;               
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: var(--red);
+            border-radius: 20px;
+            border: 2px solid var(--red);
+        }
+
         #root {
             width: 100%;
             height: 100%;
@@ -28,7 +43,7 @@ export default createGlobalStyle`
     :root {
         --white: #FFFFFF;
         --red: #F44335;
-        --green: #1F3000;
+        --green: #263A00;
         --white-gray: #EEEEEE;
         --gray: #333333;
         --lima: #CFDF6E;
